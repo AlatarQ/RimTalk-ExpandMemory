@@ -293,23 +293,11 @@ namespace RimTalk.Memory
                 int ticksAgo = Find.TickManager.TicksGame - logEntry.Age;
                 int daysAgo = ticksAgo / GenDate.TicksPerDay;
                 
-                string timePrefix = "";
-                if (daysAgo < 1)
-                {
-                    timePrefix = "今天";
-                }
-                else if (daysAgo < 3)
-                {
-                    timePrefix = $"{daysAgo}天前";
-                }
-                else if (daysAgo < 7)
-                {
-                    timePrefix = $"约{daysAgo}天前";
-                }
-                else
-                {
+                if (daysAgo >= 7)
                     return null; // 超过7天的事件不记录
-                }
+                
+                // 时间前缀取自当前语言的 Keyed 翻译
+                string timePrefix = CommonKnowledgeEntry.GetTimePrefix(daysAgo);
                 
                 return $"{timePrefix}{compressedText}";
             }
@@ -422,11 +410,13 @@ namespace RimTalk.Memory
                     // 重构为："人名在工作台制造物品"
                     if (!string.IsNullOrEmpty(person) && !string.IsNullOrEmpty(workbenchName))
                     {
-                        return $"{person}在{workbenchName}制造物品";
+                        return "RimTalk_Event_CraftedAtWorkbench"
+                            .Translate(person, workbenchName).ToString();
                     }
                     else if (!string.IsNullOrEmpty(workbenchName))
                     {
-                        return $"在{workbenchName}制造物品";
+                        return "RimTalk_Event_CraftedAtWorkbenchAnon"
+                            .Translate(workbenchName).ToString();
                     }
                 }
                 
@@ -643,19 +633,8 @@ namespace RimTalk.Memory
             if (string.IsNullOrEmpty(eventText))
                 return eventText;
             
-            // 移除常见的时间前缀
-            string[] timePrefixes = { "今天", "1天前", "2天前", "3天前", "4天前", "5天前", "6天前",
-                                     "约3天前", "约4天前", "约5天前", "约6天前", "约7天前" };
-            
-            foreach (var prefix in timePrefixes)
-            {
-                if (eventText.StartsWith(prefix))
-                {
-                    return eventText.Substring(prefix.Length);
-                }
-            }
-            
-            return eventText;
+            // 移除常见的时间前缀（当前语言 + 旧存档的硬编码中文）
+            return CommonKnowledgeEntry.RemoveTimePrefix(eventText);
         }
         
         /// <summary>

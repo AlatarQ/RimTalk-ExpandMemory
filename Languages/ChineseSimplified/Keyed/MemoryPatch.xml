@@ -622,4 +622,30 @@
   <RimTalk_PawnStatus_UnknownRace>未知</RimTalk_PawnStatus_UnknownRace>
   <!-- 逗号分隔：用于判断条目是否自动生成（可被覆盖），必须与上面的句子一致 -->
   <RimTalk_PawnStatus_AutoKeywords>刚加入,新成员,资深成员,已加入殖民地</RimTalk_PawnStatus_AutoKeywords>
+  <!-- 事件记录（IncidentPatch / EventRecordKnowledgeGenerator），时间前缀由代码拼接 -->
+  <RimTalk_Event_UnknownFaction>未知敌人</RimTalk_Event_UnknownFaction>
+  <RimTalk_Event_RaidType_Siege>围城</RimTalk_Event_RaidType_Siege>
+  <RimTalk_Event_RaidType_Mech>机械族攻击</RimTalk_Event_RaidType_Mech>
+  <RimTalk_Event_RaidType_Sapper>工兵袭击</RimTalk_Event_RaidType_Sapper>
+  <RimTalk_Event_RaidType_Breacher>破坏者袭击</RimTalk_Event_RaidType_Breacher>
+  <RimTalk_Event_RaidType_Generic>袭击</RimTalk_Event_RaidType_Generic>
+  <!-- {0}=派系名称，{1}=袭击类型 -->
+  <RimTalk_Event_RaidStarted>{0}发动了{1}</RimTalk_Event_RaidStarted>
+  <!-- {0}=上面的袭击描述 -->
+  <RimTalk_Event_RaidRepelled>{0}，殖民地成功击退了进攻</RimTalk_Event_RaidRepelled>
+  <RimTalk_Event_RaidCostly>{0}，造成了严重损失</RimTalk_Event_RaidCostly>
+  <RimTalk_Event_Wedding>举行了婚礼</RimTalk_Event_Wedding>
+  <RimTalk_Event_Funeral>举行了葬礼</RimTalk_Event_Funeral>
+  <RimTalk_Event_Birthday>庆祝了生日</RimTalk_Event_Birthday>
+  <RimTalk_Event_ResearchBreakthrough>取得了研究突破</RimTalk_Event_ResearchBreakthrough>
+  <RimTalk_Event_Anniversary>庆祝了周年纪念</RimTalk_Event_Anniversary>
+  <RimTalk_Event_NewMemberJoined>有新成员加入殖民地</RimTalk_Event_NewMemberJoined>
+  <RimTalk_Event_Infestation>发生了虫族入侵</RimTalk_Event_Infestation>
+  <RimTalk_Event_Fire>发生了火灾</RimTalk_Event_Fire>
+  <RimTalk_Event_Explosion>发生了爆炸</RimTalk_Event_Explosion>
+  <RimTalk_Event_Tornado>遭遇了龙卷风</RimTalk_Event_Tornado>
+  <RimTalk_Event_Eclipse>发生了日食</RimTalk_Event_Eclipse>
+  <!-- {0}=殖民者名字，{1}=工作台名称 -->
+  <RimTalk_Event_CraftedAtWorkbench>{0}在{1}制造物品</RimTalk_Event_CraftedAtWorkbench>
+  <RimTalk_Event_CraftedAtWorkbenchAnon>在{0}制造物品</RimTalk_Event_CraftedAtWorkbenchAnon>
 </LanguageData>

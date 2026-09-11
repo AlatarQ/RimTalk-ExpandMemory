@@ -622,4 +622,30 @@ Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_
   <RimTalk_PawnStatus_UnknownRace>unknown</RimTalk_PawnStatus_UnknownRace>
   <!-- Comma separated fragments that mark an entry as auto generated (i.e. safe to overwrite). They must appear verbatim in the sentences above. -->
   <RimTalk_PawnStatus_AutoKeywords>new member of the colony,long-standing member of the colony,joined today,joined yesterday,days ago,since joining</RimTalk_PawnStatus_AutoKeywords>
+  <!-- Event records (IncidentPatch / EventRecordKnowledgeGenerator). The time prefix above is prepended by the code. -->
+  <RimTalk_Event_UnknownFaction>an unknown enemy</RimTalk_Event_UnknownFaction>
+  <RimTalk_Event_RaidType_Siege>a siege</RimTalk_Event_RaidType_Siege>
+  <RimTalk_Event_RaidType_Mech>a mechanoid attack</RimTalk_Event_RaidType_Mech>
+  <RimTalk_Event_RaidType_Sapper>a sapper raid</RimTalk_Event_RaidType_Sapper>
+  <RimTalk_Event_RaidType_Breacher>a breacher raid</RimTalk_Event_RaidType_Breacher>
+  <RimTalk_Event_RaidType_Generic>a raid</RimTalk_Event_RaidType_Generic>
+  <!-- {0} = faction name, {1} = raid type from the keys above -->
+  <RimTalk_Event_RaidStarted>{0} launched {1}</RimTalk_Event_RaidStarted>
+  <!-- {0} = the raid sentence above -->
+  <RimTalk_Event_RaidRepelled>{0}, and the colony repelled the attack</RimTalk_Event_RaidRepelled>
+  <RimTalk_Event_RaidCostly>{0}, which caused heavy losses</RimTalk_Event_RaidCostly>
+  <RimTalk_Event_Wedding>a wedding was held</RimTalk_Event_Wedding>
+  <RimTalk_Event_Funeral>a funeral was held</RimTalk_Event_Funeral>
+  <RimTalk_Event_Birthday>a birthday was celebrated</RimTalk_Event_Birthday>
+  <RimTalk_Event_ResearchBreakthrough>a research breakthrough was made</RimTalk_Event_ResearchBreakthrough>
+  <RimTalk_Event_Anniversary>an anniversary was celebrated</RimTalk_Event_Anniversary>
+  <RimTalk_Event_NewMemberJoined>a new member joined the colony</RimTalk_Event_NewMemberJoined>
+  <RimTalk_Event_Infestation>an infestation broke out</RimTalk_Event_Infestation>
+  <RimTalk_Event_Fire>a fire broke out</RimTalk_Event_Fire>
+  <RimTalk_Event_Explosion>an explosion went off</RimTalk_Event_Explosion>
+  <RimTalk_Event_Tornado>a tornado struck</RimTalk_Event_Tornado>
+  <RimTalk_Event_Eclipse>an eclipse happened</RimTalk_Event_Eclipse>
+  <!-- {0} = colonist name, {1} = workbench name -->
+  <RimTalk_Event_CraftedAtWorkbench>{0} makes items at the {1}</RimTalk_Event_CraftedAtWorkbench>
+  <RimTalk_Event_CraftedAtWorkbenchAnon>items are made at the {0}</RimTalk_Event_CraftedAtWorkbenchAnon>
 </LanguageData>

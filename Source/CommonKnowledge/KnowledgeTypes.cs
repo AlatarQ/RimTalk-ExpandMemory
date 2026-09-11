@@ -133,7 +133,7 @@ namespace RimTalk.Memory
         /// <summary>
         /// 事件时间前缀（取自当前语言的 Keyed 翻译）
         /// </summary>
-        private static string GetTimePrefix(int daysElapsed)
+        internal static string GetTimePrefix(int daysElapsed)
         {
             if (daysElapsed < 1)
                 return EnsureSeparator("RimTalk_Memory_TimePrefix_Today".Translate().ToString());
@@ -159,7 +159,7 @@ namespace RimTalk.Memory
             return prefix + " ";
         }
 
-        private static string RemoveTimePrefix(string text)
+        internal static string RemoveTimePrefix(string text)
         {
             if (string.IsNullOrEmpty(text))
                 return text;

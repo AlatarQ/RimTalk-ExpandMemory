@@ -85,7 +85,7 @@ namespace RimTalk.Memory.Patches
             int raidId = GenTicks.TicksGame;
             
             // 获取派系信息
-            string factionName = "未知敌人";
+            string factionName = "RimTalk_Event_UnknownFaction".Translate().ToString();
             if (parms.faction != null && !string.IsNullOrEmpty(parms.faction.Name))
             {
                 factionName = parms.faction.Name;
@@ -94,8 +94,9 @@ namespace RimTalk.Memory.Patches
             // 获取袭击类型
             string raidType = GetRaidType(incidentDef);
             
-            // 生成初始描述
-            string eventText = $"今天{factionName}发动了{raidType}";
+            // 生成初始描述（时间前缀取自当前语言的 Keyed 翻译）
+            string eventText = CommonKnowledgeEntry.GetTimePrefix(0)
+                + "RimTalk_Event_RaidStarted".Translate(factionName, raidType).ToString();
             
             // 添加到常识库
             var entry = AddOrUpdateKnowledge(null, eventText, 0.9f);
@@ -133,15 +134,15 @@ namespace RimTalk.Memory.Patches
             string defName = incidentDef.defName;
             
             if (defName.Contains("Siege"))
-                return "围城";
+                return "RimTalk_Event_RaidType_Siege".Translate().ToString();
             else if (defName.Contains("Mech"))
-                return "机械族攻击";
+                return "RimTalk_Event_RaidType_Mech".Translate().ToString();
             else if (defName.Contains("Sapper"))
-                return "工兵袭击";
+                return "RimTalk_Event_RaidType_Sapper".Translate().ToString();
             else if (defName.Contains("Breacher"))
-                return "破坏者袭击";
+                return "RimTalk_Event_RaidType_Breacher".Translate().ToString();
             else
-                return "袭击";
+                return "RimTalk_Event_RaidType_Generic".Translate().ToString();
         }
         
         /// <summary>
@@ -244,12 +245,12 @@ namespace RimTalk.Memory.Patches
             // 更新内容
             if (defeated)
             {
-                entry.content = $"{raidInfo.initialText}，殖民地成功击退了进攻";
+                entry.content = "RimTalk_Event_RaidRepelled".Translate(raidInfo.initialText).ToString();
                 entry.importance = 0.95f; // 提高重要性
             }
             else
             {
-                entry.content = $"{raidInfo.initialText}，造成了严重损失";
+                entry.content = "RimTalk_Event_RaidCostly".Translate(raidInfo.initialText).ToString();
                 entry.importance = 1.0f; // 最高重要性
             }
             
@@ -387,53 +388,53 @@ namespace RimTalk.Memory.Patches
             string label = incidentDef.label;
             string defName = incidentDef.defName;
             
-            // 添加时间前缀
-            string timePrefix = "今天";
+            // 添加时间前缀（取自当前语言的 Keyed 翻译）
+            string timePrefix = CommonKnowledgeEntry.GetTimePrefix(0);
             
             // 处理特殊事件类型
             if (defName.Contains("Marriage") || defName.Contains("Wedding"))
             {
-                return $"{timePrefix}举行了婚礼";
+                return timePrefix + "RimTalk_Event_Wedding".Translate().ToString();
             }
             else if (defName.Contains("Funeral") || defName.Contains("Burial"))
             {
-                return $"{timePrefix}举行了葬礼";
+                return timePrefix + "RimTalk_Event_Funeral".Translate().ToString();
             }
             else if (defName.Contains("Birthday"))
             {
-                return $"{timePrefix}庆祝了生日";
+                return timePrefix + "RimTalk_Event_Birthday".Translate().ToString();
             }
             else if (defName.Contains("Breakthrough") || defName.Contains("Research") && defName.Contains("Complete"))
             {
-                return $"{timePrefix}取得了研究突破";
+                return timePrefix + "RimTalk_Event_ResearchBreakthrough".Translate().ToString();
             }
             else if (defName.Contains("Anniversary"))
             {
-                return $"{timePrefix}庆祝了周年纪念";
+                return timePrefix + "RimTalk_Event_Anniversary".Translate().ToString();
             }
             else if (defName.Contains("WandererJoin") || defName.Contains("RefugeeJoin"))
             {
-                return $"{timePrefix}有新成员加入殖民地";
+                return timePrefix + "RimTalk_Event_NewMemberJoined".Translate().ToString();
             }
             else if (defName.Contains("Infestation"))
             {
-                return $"{timePrefix}发生了虫族入侵";
+                return timePrefix + "RimTalk_Event_Infestation".Translate().ToString();
             }
             else if (defName.Contains("Fire"))
             {
-                return $"{timePrefix}发生了火灾";
+                return timePrefix + "RimTalk_Event_Fire".Translate().ToString();
             }
             else if (defName.Contains("Explosion"))
             {
-                return $"{timePrefix}发生了爆炸";
+                return timePrefix + "RimTalk_Event_Explosion".Translate().ToString();
             }
             else if (defName.Contains("Tornado"))
             {
-                return $"{timePrefix}遭遇了龙卷风";
+                return timePrefix + "RimTalk_Event_Tornado".Translate().ToString();
             }
             else if (defName.Contains("Eclipse"))
             {
-                return $"{timePrefix}发生了日食";
+                return timePrefix + "RimTalk_Event_Eclipse".Translate().ToString();
             }
             else if (defName.Contains("TraderCaravan") || defName.Contains("VisitorGroup"))
             {
