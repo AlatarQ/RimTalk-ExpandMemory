@@ -17,24 +17,10 @@ namespace RimTalk.Memory.UI
         private string editDeepArchive;
         private int editMaxTokens;
         
-        // 默认提示词（从 IndependentAISummarizer 复制）
-        private const string DEFAULT_DAILY_SUMMARY = 
-            "殖民者{0}的记忆总结\n\n" +
-            "记忆列表\n" +
-            "{1}\n\n" +
-            "要求提炼地点人物事件\n" +
-            "相似事件合并标注频率\n" +
-            "极简表达不超过80字\n" +
-            "只输出总结文字不要其他格式";
-        
-        private const string DEFAULT_DEEP_ARCHIVE = 
-            "殖民者{0}的记忆归档\n\n" +
-            "记忆列表\n" +
-            "{1}\n\n" +
-            "要求提炼核心特征和里程碑事件\n" +
-            "合并相似经历突出长期趋势\n" +
-            "极简表达不超过60字\n" +
-            "只输出总结文字不要其他格式";
+        // 默认提示词（随语言变化，定义于 Languages/<lang>/Keyed/MemoryPatch.xml）
+        private static string DEFAULT_DAILY_SUMMARY => RimTalkMemoryPatchSettings.DefaultSummarizePrompt;
+
+        private static string DEFAULT_DEEP_ARCHIVE => RimTalkMemoryPatchSettings.DefaultArchivePrompt;
         
         private Vector2 scrollPosition = Vector2.zero;
         

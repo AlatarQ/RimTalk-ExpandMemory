@@ -9,6 +9,8 @@
   <RimTalk_ShowAllHumanlikes>显示所有人</RimTalk_ShowAllHumanlikes>
 
   <!-- ITab Memory -->
+  <RimTalk_ShortTermMemories>短期记忆</RimTalk_ShortTermMemories>
+  <RimTalk_LongTermMemories>长期记忆</RimTalk_LongTermMemories>
   <RimTalk_Memory_NoMemories>没有可显示的记忆</RimTalk_Memory_NoMemories>
   
   <!-- ==================== Mind Stream UI 标签 ==================== -->
@@ -556,4 +558,52 @@
 • 环境类变量需要角色所在地图信息
 • 其他类变量需要至少生成一次对话后才可解析
 </RimTalk_Preview_HelpContent>
+
+  <!-- ==================== 生成文本（记忆层级、类型、时间、AI 提示词） ==================== -->
+  <RimTalk_Memory_Unknown>未知</RimTalk_Memory_Unknown>
+
+  <RimTalk_Memory_LayerName_Active>超短期</RimTalk_Memory_LayerName_Active>
+  <RimTalk_Memory_LayerName_Situational>短期</RimTalk_Memory_LayerName_Situational>
+  <RimTalk_Memory_LayerName_EventLog>中期</RimTalk_Memory_LayerName_EventLog>
+  <RimTalk_Memory_LayerName_Archive>长期</RimTalk_Memory_LayerName_Archive>
+
+  <RimTalk_Memory_TypeName_Conversation>对话</RimTalk_Memory_TypeName_Conversation>
+  <RimTalk_Memory_TypeName_Action>行动</RimTalk_Memory_TypeName_Action>
+  <RimTalk_Memory_TypeName_Summarization>总结</RimTalk_Memory_TypeName_Summarization>
+  <RimTalk_Memory_TypeName_Event>事件</RimTalk_Memory_TypeName_Event>
+  <RimTalk_Memory_TypeName_Emotion>情绪</RimTalk_Memory_TypeName_Emotion>
+  <RimTalk_Memory_TypeName_Relationship>关系</RimTalk_Memory_TypeName_Relationship>
+  <RimTalk_Memory_TypeName_Internal>内部</RimTalk_Memory_TypeName_Internal>
+
+  <RimTalk_Memory_Age_Invalid>异常时间</RimTalk_Memory_Age_Invalid>
+  <RimTalk_Memory_Age_JustNow>刚刚</RimTalk_Memory_Age_JustNow>
+  <RimTalk_Memory_Age_HoursAgo>几小时前</RimTalk_Memory_Age_HoursAgo>
+  <RimTalk_Memory_Age_WithinDay>一天内</RimTalk_Memory_Age_WithinDay>
+  <RimTalk_Memory_Age_Yesterday>昨天</RimTalk_Memory_Age_Yesterday>
+  <RimTalk_Memory_Age_DayBeforeYesterday>前天</RimTalk_Memory_Age_DayBeforeYesterday>
+
+  <RimTalk_Memory_TimePrefix_Today>今天</RimTalk_Memory_TimePrefix_Today>
+  <RimTalk_Memory_TimePrefix_DaysAgo>{0}天前</RimTalk_Memory_TimePrefix_DaysAgo>
+  <RimTalk_Memory_TimePrefix_AboutDaysAgo>约{0}天前</RimTalk_Memory_TimePrefix_AboutDaysAgo>
+
+  <!-- {0} = 殖民者名称（含性别与年龄），{1} = 记忆列表，两个占位符都必须保留 -->
+  <RimTalk_Memory_DefaultPrompt_DailySummary>殖民者{0}的记忆总结
+
+记忆列表
+{1}
+
+要求提炼地点人物事件
+相似事件合并标注频率
+极简表达不超过80字
+只输出总结文字不要其他格式</RimTalk_Memory_DefaultPrompt_DailySummary>
+
+  <RimTalk_Memory_DefaultPrompt_DeepArchive>殖民者{0}的记忆归档
+
+记忆列表
+{1}
+
+要求提炼核心特征和里程碑事件
+合并相似经历突出长期趋势
+极简表达不超过60字
+只输出总结文字不要其他格式</RimTalk_Memory_DefaultPrompt_DeepArchive>
 </LanguageData>

@@ -123,14 +123,58 @@ namespace RimTalk.Memory
             }
         }
         
+        // 旧版本（硬编码中文）生成的前缀，保留用于兼容老存档
+        private static readonly string[] LegacyTimePrefixes =
+        {
+            "今天", "1天前", "2天前", "3天前", "4天前", "5天前", "6天前",
+            "约3天前", "约4天前", "约5天前", "约6天前", "约7天前"
+        };
+
+        /// <summary>
+        /// 事件时间前缀（取自当前语言的 Keyed 翻译）
+        /// </summary>
+        private static string GetTimePrefix(int daysElapsed)
+        {
+            if (daysElapsed < 1)
+                return EnsureSeparator("RimTalk_Memory_TimePrefix_Today".Translate().ToString());
+            if (daysElapsed <= 2)
+                return EnsureSeparator("RimTalk_Memory_TimePrefix_DaysAgo".Translate(daysElapsed.ToString()).ToString());
+            if (daysElapsed < 7)
+                return EnsureSeparator("RimTalk_Memory_TimePrefix_AboutDaysAgo".Translate(daysElapsed.ToString()).ToString());
+            return EnsureSeparator("RimTalk_Memory_TimePrefix_AboutDaysAgo".Translate("7").ToString());
+        }
+
+        /// <summary>
+        /// 中日韩文本直接拼接；字母文字需要一个空格分隔前缀与正文
+        /// </summary>
+        private static string EnsureSeparator(string prefix)
+        {
+            if (string.IsNullOrEmpty(prefix))
+                return prefix;
+
+            char last = prefix[prefix.Length - 1];
+            if (char.IsWhiteSpace(last) || last >= 0x2E80)
+                return prefix;
+
+            return prefix + " ";
+        }
+
         private static string RemoveTimePrefix(string text)
         {
             if (string.IsNullOrEmpty(text))
                 return text;
-            
-            string[] timePrefixes = { "今天", "1天前", "2天前", "3天前", "4天前", "5天前", "6天前", 
-                                     "约3天前", "约4天前", "约5天前", "约6天前", "约7天前" };
-            
+
+            var timePrefixes = new List<string>(LegacyTimePrefixes);
+            for (int d = 0; d <= 7; d++)
+            {
+                string prefix = GetTimePrefix(d);
+                if (!string.IsNullOrEmpty(prefix) && !timePrefixes.Contains(prefix))
+                    timePrefixes.Add(prefix);
+            }
+
+            // 先匹配较长的前缀，避免部分匹配
+            timePrefixes.Sort((a, b) => b.Length.CompareTo(a.Length));
+
             foreach (var prefix in timePrefixes)
             {
                 if (text.StartsWith(prefix))
@@ -153,28 +197,8 @@ namespace RimTalk.Memory
             int ticksElapsed = currentTick - creationTick;
             int daysElapsed = ticksElapsed / GenDate.TicksPerDay;
             
-            string timePrefix = "";
-            if (daysElapsed < 1)
-            {
-                timePrefix = "今天";
-            }
-            else if (daysElapsed == 1)
-            {
-                timePrefix = "1天前";
-            }
-            else if (daysElapsed == 2)
-            {
-                timePrefix = "2天前";
-            }
-            else if (daysElapsed < 7)
-            {
-                timePrefix = $"约{daysElapsed}天前";
-            }
-            else
-            {
-                timePrefix = "约7天前";
-            }
-            
+            string timePrefix = GetTimePrefix(daysElapsed);
+
             content = timePrefix + originalEventText;
         }
 

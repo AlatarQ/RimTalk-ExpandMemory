@@ -70,11 +70,11 @@ public class MemoryEntry : IExposable
     /// </summary>
     public string LayerName => Layer switch
     {
-        MemoryLayer.Active => "超短期",
-        MemoryLayer.Situational => "短期",
-        MemoryLayer.EventLog => "中期",
-        MemoryLayer.Archive => "长期",
-        _ => "未知"
+        MemoryLayer.Active => "RimTalk_Memory_LayerName_Active".Translate().ToString(),
+        MemoryLayer.Situational => "RimTalk_Memory_LayerName_Situational".Translate().ToString(),
+        MemoryLayer.EventLog => "RimTalk_Memory_LayerName_EventLog".Translate().ToString(),
+        MemoryLayer.Archive => "RimTalk_Memory_LayerName_Archive".Translate().ToString(),
+        _ => "RimTalk_Memory_Unknown".Translate().ToString()
     };
 
     /// <summary>
@@ -82,14 +82,14 @@ public class MemoryEntry : IExposable
     /// </summary>
     public string TypeName => Type switch
     {
-        MemoryType.Conversation => "对话",
-        MemoryType.Action => "行动",
-        MemoryType.Summarization => "总结",
-        MemoryType.Event => "事件",
-        MemoryType.Emotion => "情绪",
-        MemoryType.Relationship => "关系",
-        MemoryType.Internal => "内部",
-        _ => "未知"
+        MemoryType.Conversation => "RimTalk_Memory_TypeName_Conversation".Translate().ToString(),
+        MemoryType.Action => "RimTalk_Memory_TypeName_Action".Translate().ToString(),
+        MemoryType.Summarization => "RimTalk_Memory_TypeName_Summarization".Translate().ToString(),
+        MemoryType.Event => "RimTalk_Memory_TypeName_Event".Translate().ToString(),
+        MemoryType.Emotion => "RimTalk_Memory_TypeName_Emotion".Translate().ToString(),
+        MemoryType.Relationship => "RimTalk_Memory_TypeName_Relationship".Translate().ToString(),
+        MemoryType.Internal => "RimTalk_Memory_TypeName_Internal".Translate().ToString(),
+        _ => "RimTalk_Memory_Unknown".Translate().ToString()
     };
 
     /// <summary>
@@ -108,12 +108,12 @@ public class MemoryEntry : IExposable
         MemoryLayer.Archive => GenDate.DateMonthYearStringAt(GenDate.TickGameToAbs(GameTick), Vector2.zero),
         _ => (Find.TickManager?.TicksGame - GameTick) switch
         {
-            null or < 0 => "异常时间",
-            < GenDate.TicksPerHour => "刚刚",
-            < GenDate.TicksPerHour * 6 => "几小时前",
-            < GenDate.TicksPerDay => "一天内",
-            < GenDate.TicksPerDay * 2 => "昨天",
-            < GenDate.TicksPerDay * 3 => "前天",
+            null or < 0 => "RimTalk_Memory_Age_Invalid".Translate().ToString(),
+            < GenDate.TicksPerHour => "RimTalk_Memory_Age_JustNow".Translate().ToString(),
+            < GenDate.TicksPerHour * 6 => "RimTalk_Memory_Age_HoursAgo".Translate().ToString(),
+            < GenDate.TicksPerDay => "RimTalk_Memory_Age_WithinDay".Translate().ToString(),
+            < GenDate.TicksPerDay * 2 => "RimTalk_Memory_Age_Yesterday".Translate().ToString(),
+            < GenDate.TicksPerDay * 3 => "RimTalk_Memory_Age_DayBeforeYesterday".Translate().ToString(),
             _ => GenDate.DateFullStringAt(GenDate.TickGameToAbs(GameTick), Vector2.zero)
         }
     };

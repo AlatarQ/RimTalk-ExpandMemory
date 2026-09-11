@@ -9,6 +9,8 @@
   <RimTalk_ShowAllHumanlikes>Show all humanlikes</RimTalk_ShowAllHumanlikes>
 
   <!-- ITab Memory -->
+  <RimTalk_ShortTermMemories>Short-term</RimTalk_ShortTermMemories>
+  <RimTalk_LongTermMemories>Long-term</RimTalk_LongTermMemories>
   <RimTalk_Memory_NoMemories>No memories to display</RimTalk_Memory_NoMemories>
   
   <!-- ==================== Mind Stream UI Tabs ==================== -->
@@ -556,4 +558,52 @@ This tool previews memory and knowledge injection effects, helping you understan
 • Environment variables require map information
 • Other variables require at least one generated conversation to parse
 </RimTalk_Preview_HelpContent>
+
+  <!-- ==================== Generated text (memory layers, types, ages, AI prompts) ==================== -->
+  <RimTalk_Memory_Unknown>Unknown</RimTalk_Memory_Unknown>
+
+  <RimTalk_Memory_LayerName_Active>Ultra-short term</RimTalk_Memory_LayerName_Active>
+  <RimTalk_Memory_LayerName_Situational>Short term</RimTalk_Memory_LayerName_Situational>
+  <RimTalk_Memory_LayerName_EventLog>Mid term</RimTalk_Memory_LayerName_EventLog>
+  <RimTalk_Memory_LayerName_Archive>Long term</RimTalk_Memory_LayerName_Archive>
+
+  <RimTalk_Memory_TypeName_Conversation>Conversation</RimTalk_Memory_TypeName_Conversation>
+  <RimTalk_Memory_TypeName_Action>Action</RimTalk_Memory_TypeName_Action>
+  <RimTalk_Memory_TypeName_Summarization>Summary</RimTalk_Memory_TypeName_Summarization>
+  <RimTalk_Memory_TypeName_Event>Event</RimTalk_Memory_TypeName_Event>
+  <RimTalk_Memory_TypeName_Emotion>Emotion</RimTalk_Memory_TypeName_Emotion>
+  <RimTalk_Memory_TypeName_Relationship>Relationship</RimTalk_Memory_TypeName_Relationship>
+  <RimTalk_Memory_TypeName_Internal>Internal</RimTalk_Memory_TypeName_Internal>
+
+  <RimTalk_Memory_Age_Invalid>Invalid time</RimTalk_Memory_Age_Invalid>
+  <RimTalk_Memory_Age_JustNow>Just now</RimTalk_Memory_Age_JustNow>
+  <RimTalk_Memory_Age_HoursAgo>A few hours ago</RimTalk_Memory_Age_HoursAgo>
+  <RimTalk_Memory_Age_WithinDay>Within a day</RimTalk_Memory_Age_WithinDay>
+  <RimTalk_Memory_Age_Yesterday>Yesterday</RimTalk_Memory_Age_Yesterday>
+  <RimTalk_Memory_Age_DayBeforeYesterday>The day before yesterday</RimTalk_Memory_Age_DayBeforeYesterday>
+
+  <RimTalk_Memory_TimePrefix_Today>Today:</RimTalk_Memory_TimePrefix_Today>
+  <RimTalk_Memory_TimePrefix_DaysAgo>{0} day(s) ago:</RimTalk_Memory_TimePrefix_DaysAgo>
+  <RimTalk_Memory_TimePrefix_AboutDaysAgo>About {0} day(s) ago:</RimTalk_Memory_TimePrefix_AboutDaysAgo>
+
+  <!-- {0} = colonist name (with gender/age), {1} = memory list. Keep both placeholders. -->
+  <RimTalk_Memory_DefaultPrompt_DailySummary>Memory summary for colonist {0}
+
+Memory list
+{1}
+
+Condense places, people and events
+Merge similar events and note how often they happened
+Be extremely concise, 50 words maximum
+Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_DailySummary>
+
+  <RimTalk_Memory_DefaultPrompt_DeepArchive>Memory archive for colonist {0}
+
+Memory list
+{1}
+
+Condense core traits and milestone events
+Merge similar experiences and highlight long-term trends
+Be extremely concise, 40 words maximum
+Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_DeepArchive>
 </LanguageData>

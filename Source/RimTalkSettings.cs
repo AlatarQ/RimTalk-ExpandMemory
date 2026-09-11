@@ -85,26 +85,14 @@ namespace RimTalk.MemoryPatch
         // 新多备选配置链(本期 v4.x 主要数据来源)
         public List<Memory.AI.ApiConfig> ApiConfigs = new();
 
-        // AI 总结提示词配置
-        public string SummarizePrompt = DefaultSummarizePrompt;  // 空字符串表示使用默认
-        public const string DefaultSummarizePrompt =
-            "殖民者{0}的记忆总结\n\n" +
-            "记忆列表\n" +
-            "{1}\n\n" +
-            "要求提炼地点人物事件\n" +
-            "相似事件合并标注频率\n" +
-            "极简表达不超过80字\n" +
-            "只输出总结文字不要其他格式";
+        // AI 总结提示词配置（空字符串表示使用当前语言的默认模板）
+        // The default templates live in Languages/<lang>/Keyed/MemoryPatch.xml so that
+        // the AI is prompted in the player's own language instead of hard-coded Chinese.
+        public string SummarizePrompt = "";
+        public static string DefaultSummarizePrompt => "RimTalk_Memory_DefaultPrompt_DailySummary".Translate().ToString();
 
-        public string ArchivePrompt = DefaultArchivePrompt;   // 空字符串表示使用默认
-        public const string DefaultArchivePrompt =
-            "殖民者{0}的记忆归档\n\n" +
-            "记忆列表\n" +
-            "{1}\n\n" +
-            "要求提炼核心特征和里程碑事件\n" +
-            "合并相似经历突出长期趋势\n" +
-            "极简表达不超过60字\n" +
-            "只输出总结文字不要其他格式";
+        public string ArchivePrompt = "";
+        public static string DefaultArchivePrompt => "RimTalk_Memory_DefaultPrompt_DeepArchive".Translate().ToString();
 
         public int SummaryMaxTokens = 8000;  // ⭐ v3.4.0: 调整默认值为 8000
 
