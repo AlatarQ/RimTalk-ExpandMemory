@@ -320,31 +320,31 @@
     
     <!-- 注入プレビューアUI -->
     <RimTalk_Preview_Title>注入コンテンツプレビューア</RimTalk_Preview_Title>
-    <RimTalk_Preview_SelectPawn>ポーンを選択:</RimTalk_Pレビュー_SelectPawn>
+    <RimTalk_Preview_SelectPawn>ポーンを選択:</RimTalk_Preview_SelectPawn>
     <RimTalk_Preview_ChoosePawn>ポーンを選択</RimTalk_Preview_ChoosePawn>
-    <RimTalk_Preview_TargetPawn>ターゲットポーン（オプション）:</RimTalk_Pレビュー_TargetPawn>
-    <RimTalk_Preview_ContextInput>コンテキスト入力:</RimTalk_Pレビュー_ContextInput>
-    <RimTalk_Pレビュー_ContextPlaceholder>コンテキストを入力（例：会話トピック、最近のイベント）...</RimTalk_Pレビュー_ContextPlaceholder>
-    <RimTalk_Pレビュー_RefreshPreview>プレビューを更新</RimTalk_Pレビュー_RefreshPreview>
-    <RimTalk_Pレビュー_MemoriesTab>メモリ</RimTalk_Pレビュー_MemoriesTab>
-    <RimTalk_Pレビュー_KnowledgeTab>知識</RimTalk_Pレビュー_KnowledgeTab>
-    <RimTalk_Pレビュー_FinalOutputTab>最終出力</RimTalk_Pレビュー_FinalOutputTab>
-    <RimTalk_Pレビュー_NoColonists>入植者がいません</RimTalk_Pレビュー_NoColonists>
-    <RimTalk_Pレビュー_NoPawnSelected>プレビューするポーンを選択してください</RimTalk_Pレビュー_NoPawnSelected>
-    <RimTalk_Pレビュー_NoMemories>表示するメモリがありません</RimTalk_Pレビュー_NoMemories>
-    <RimTalk_Pレビュー_NoKnowledge>表示する知識がありません</RimTalk_Pレビュー_NoKnowledge>
-    <RimTalk_Pレビュー_MemoryScores>メモリ注入（上位{0}件）:</RimTalk_Pレビュー_MemoryScores>
-    <RimTalk_Pレビュー_KnowledgeScores>知識注入（上位{0}件）:</RimTalk_Pレビュー_KnowledgeScores>
-    <RimTalk_Pレビュー_Score>スコア</RimTalk_Pレビュー_Score>
-    <RimTalk_Pレビュー_Time>時間</RimTalk_Pレビュー_Time>
-    <RimTalk_Pレビュー_Importance>重要度</RimTalk_Pレビュー_Importance>
-    <RimTalk_Pレビュー_Keyword>キーワード</RimTalk_Pレビュー_Keyword>
-    <RimTalk_Pレビュー_Bonus>ボーナス</RimTalk_Pレビュー_Bonus>
-    <RimTalk_Pレビュー_ContextKeywords>コンテキストキーワード（{0}）:</RimTalk_Pレビュー_ContextKeywords>
-    <RimTalk_Pレビュー_PawnKeywords>ポーンキーワード（{0}）:</RimTalk_Pレビュー_PawnKeywords>
-    <RimTalk_Pレビュー_InjectedContent>最終注入コンテンツ:</RimTalk_Pレビュー_InjectedContent>
-    <RimTalk_Pレビュー_CopyToClipboard>クリップボードにコピー</RimTalk_Pレビュー_CopyToClipboard>
-    <RimTalk_Pレビュー_Copied>クリップボードにコピーしました</RimTalk_Pレビュー_Copied>
+    <RimTalk_Preview_TargetPawn>ターゲットポーン（オプション）:</RimTalk_Preview_TargetPawn>
+    <RimTalk_Preview_ContextInput>コンテキスト入力:</RimTalk_Preview_ContextInput>
+    <RimTalk_Preview_ContextPlaceholder>コンテキストを入力（例：会話トピック、最近のイベント）...</RimTalk_Preview_ContextPlaceholder>
+    <RimTalk_Preview_RefreshPreview>プレビューを更新</RimTalk_Preview_RefreshPreview>
+    <RimTalk_Preview_MemoriesTab>メモリ</RimTalk_Preview_MemoriesTab>
+    <RimTalk_Preview_KnowledgeTab>知識</RimTalk_Preview_KnowledgeTab>
+    <RimTalk_Preview_FinalOutputTab>最終出力</RimTalk_Preview_FinalOutputTab>
+    <RimTalk_Preview_NoColonists>入植者がいません</RimTalk_Preview_NoColonists>
+    <RimTalk_Preview_NoPawnSelected>プレビューするポーンを選択してください</RimTalk_Preview_NoPawnSelected>
+    <RimTalk_Preview_NoMemories>表示するメモリがありません</RimTalk_Preview_NoMemories>
+    <RimTalk_Preview_NoKnowledge>表示する知識がありません</RimTalk_Preview_NoKnowledge>
+    <RimTalk_Preview_MemoryScores>メモリ注入（上位{0}件）:</RimTalk_Preview_MemoryScores>
+    <RimTalk_Preview_KnowledgeScores>知識注入（上位{0}件）:</RimTalk_Preview_KnowledgeScores>
+    <RimTalk_Preview_Score>スコア</RimTalk_Preview_Score>
+    <RimTalk_Preview_Time>時間</RimTalk_Preview_Time>
+    <RimTalk_Preview_Importance>重要度</RimTalk_Preview_Importance>
+    <RimTalk_Preview_Keyword>キーワード</RimTalk_Preview_Keyword>
+    <RimTalk_Preview_Bonus>ボーナス</RimTalk_Preview_Bonus>
+    <RimTalk_Preview_ContextKeywords>コンテキストキーワード（{0}）:</RimTalk_Preview_ContextKeywords>
+    <RimTalk_Preview_PawnKeywords>ポーンキーワード（{0}）:</RimTalk_Preview_PawnKeywords>
+    <RimTalk_Preview_InjectedContent>最終注入コンテンツ:</RimTalk_Preview_InjectedContent>
+    <RimTalk_Preview_CopyToClipboard>クリップボードにコピー</RimTalk_Preview_CopyToClipboard>
+    <RimTalk_Preview_Copied>クリップボードにコピーしました</RimTalk_Preview_Copied>
     
     <!-- メモリタブUI -->
     <RimTalk_SelectColonist>入植者を選択</RimTalk_SelectColonist>
