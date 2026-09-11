@@ -89,21 +89,23 @@ namespace RimTalk.Memory
                 
                 if (ageYears < 3f)
                 {
-                    AddAndRecord("婴儿", keywords, info.AgeKeywords);
-                    AddAndRecord("宝宝", keywords, info.AgeKeywords);
+                    KeywordVocabulary.ForEach("婴儿 宝宝", "RimTalk_PawnKeywords_Age_Baby",
+                        w => AddAndRecord(w, keywords, info.AgeKeywords));
                 }
                 else if (ageYears < 13f)
                 {
-                    AddAndRecord("儿童", keywords, info.AgeKeywords);
-                    AddAndRecord("小孩", keywords, info.AgeKeywords);
+                    KeywordVocabulary.ForEach("儿童 小孩", "RimTalk_PawnKeywords_Age_Child",
+                        w => AddAndRecord(w, keywords, info.AgeKeywords));
                 }
                 else if (ageYears < 18f)
                 {
-                    AddAndRecord("青少年", keywords, info.AgeKeywords);
+                    KeywordVocabulary.ForEach("青少年", "RimTalk_PawnKeywords_Age_Teen",
+                        w => AddAndRecord(w, keywords, info.AgeKeywords));
                 }
                 else
                 {
-                    AddAndRecord("成人", keywords, info.AgeKeywords);
+                    KeywordVocabulary.ForEach("成人", "RimTalk_PawnKeywords_Age_Adult",
+                        w => AddAndRecord(w, keywords, info.AgeKeywords));
                 }
             }
         }
@@ -140,19 +142,23 @@ namespace RimTalk.Memory
         {
             if (pawn.IsColonist)
             {
-                AddAndRecord("殖民者", keywords, info.IdentityKeywords);
+                KeywordVocabulary.ForEach("殖民者", "RimTalk_PawnKeywords_Identity_Colonist",
+                    w => AddAndRecord(w, keywords, info.IdentityKeywords));
             }
             else if (pawn.IsPrisoner)
             {
-                AddAndRecord("囚犯", keywords, info.IdentityKeywords);
+                KeywordVocabulary.ForEach("囚犯", "RimTalk_PawnKeywords_Identity_Prisoner",
+                    w => AddAndRecord(w, keywords, info.IdentityKeywords));
             }
             else if (pawn.IsSlaveOfColony)
             {
-                AddAndRecord("奴隶", keywords, info.IdentityKeywords);
+                KeywordVocabulary.ForEach("奴隶", "RimTalk_PawnKeywords_Identity_Slave",
+                    w => AddAndRecord(w, keywords, info.IdentityKeywords));
             }
             else if (pawn.HostFaction == Faction.OfPlayer)
             {
-                AddAndRecord("访客", keywords, info.IdentityKeywords);
+                KeywordVocabulary.ForEach("访客", "RimTalk_PawnKeywords_Identity_Guest",
+                    w => AddAndRecord(w, keywords, info.IdentityKeywords));
             }
             else if (pawn.Faction != null && pawn.Faction != Faction.OfPlayer)
             {
@@ -198,11 +204,15 @@ namespace RimTalk.Memory
                         // 添加等级标记
                         if (level >= 15)
                         {
-                            AddAndRecord(skillRecord.def.label + "精通", keywords, info.SkillLevelKeywords);
+                            KeywordVocabulary.ForEachSkillLevel(
+                                skillRecord.def.label, "精通", "RimTalk_PawnKeywords_SkillMaster",
+                                w => AddAndRecord(w, keywords, info.SkillLevelKeywords));
                         }
                         else if (level >= 10)
                         {
-                            AddAndRecord(skillRecord.def.label + "熟练", keywords, info.SkillLevelKeywords);
+                            KeywordVocabulary.ForEachSkillLevel(
+                                skillRecord.def.label, "熟练", "RimTalk_PawnKeywords_SkillSkilled",
+                                w => AddAndRecord(w, keywords, info.SkillLevelKeywords));
                         }
                     }
                 }
@@ -215,11 +225,13 @@ namespace RimTalk.Memory
             {
                 if (pawn.health.hediffSet.GetInjuredParts().Any())
                 {
-                    AddAndRecord("受伤", keywords, info.HealthKeywords);
+                    KeywordVocabulary.ForEach("受伤", "RimTalk_PawnKeywords_Health_Injured",
+                        w => AddAndRecord(w, keywords, info.HealthKeywords));
                 }
                 else if (!pawn.health.HasHediffsNeedingTend())
                 {
-                    AddAndRecord("健康", keywords, info.HealthKeywords);
+                    KeywordVocabulary.ForEach("健康", "RimTalk_PawnKeywords_Health_Healthy",
+                        w => AddAndRecord(w, keywords, info.HealthKeywords));
                 }
             }
         }

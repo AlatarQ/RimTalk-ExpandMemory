@@ -719,4 +719,41 @@ Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_
   <RimTalk_TagTest_Hint>Press the Test button to start</RimTalk_TagTest_Hint>
   <RimTalk_TagTest_EnterTag>Enter a tag first</RimTalk_TagTest_EnterTag>
   <RimTalk_TagTest_SampleContent>test content</RimTalk_TagTest_SampleContent>
+  <!-- Pawn keyword vocabulary. These words are added to the text that common knowledge tags
+       are matched against, so a player can tag an entry "prisoner" instead of "囚犯".
+       Several synonyms per key, separated by spaces; the Chinese words stay in the code for old saves. -->
+  <RimTalk_PawnKeywords_Age_Baby>baby infant</RimTalk_PawnKeywords_Age_Baby>
+  <RimTalk_PawnKeywords_Age_Child>child kid</RimTalk_PawnKeywords_Age_Child>
+  <RimTalk_PawnKeywords_Age_Teen>teenager teen</RimTalk_PawnKeywords_Age_Teen>
+  <RimTalk_PawnKeywords_Age_Adult>adult</RimTalk_PawnKeywords_Age_Adult>
+  <RimTalk_PawnKeywords_Identity_Colonist>colonist settler</RimTalk_PawnKeywords_Identity_Colonist>
+  <RimTalk_PawnKeywords_Identity_Prisoner>prisoner</RimTalk_PawnKeywords_Identity_Prisoner>
+  <RimTalk_PawnKeywords_Identity_Slave>slave</RimTalk_PawnKeywords_Identity_Slave>
+  <RimTalk_PawnKeywords_Identity_Guest>guest visitor</RimTalk_PawnKeywords_Identity_Guest>
+  <RimTalk_PawnKeywords_Health_Injured>injured wounded hurt</RimTalk_PawnKeywords_Health_Injured>
+  <RimTalk_PawnKeywords_Health_Healthy>healthy</RimTalk_PawnKeywords_Health_Healthy>
+  <!-- {0} = skill name. One phrase, not a list -->
+  <RimTalk_PawnKeywords_SkillMaster>{0} master</RimTalk_PawnKeywords_SkillMaster>
+  <RimTalk_PawnKeywords_SkillSkilled>{0} skilled</RimTalk_PawnKeywords_SkillSkilled>
+  <!-- Conversation scene detection (AdvancedScoringSystem). Space separated words, matched
+       case insensitively against the conversation text; the Chinese words stay in the code. -->
+  <RimTalk_Scene_Emergency_Keywords>raid attack enemy danger hurt injured dying help hurry</RimTalk_Scene_Emergency_Keywords>
+  <RimTalk_Scene_HistoryRecall_Keywords>past before earlier once remember back then used to</RimTalk_Scene_HistoryRecall_Keywords>
+  <RimTalk_Scene_EmotionalTalk_Keywords>feel feeling mood sad happy miss like hate</RimTalk_Scene_EmotionalTalk_Keywords>
+  <RimTalk_Scene_WorkDiscussion_Keywords>work job task build construct plant grow research haul</RimTalk_Scene_WorkDiscussion_Keywords>
+  <RimTalk_Scene_Introduction_Keywords>who are you your name come from background good at</RimTalk_Scene_Introduction_Keywords>
+
+  <!-- Conversation topics. The _Keywords entry detects the topic, the other one is the label
+       that is then looked for in memories, so keep it a word that shows up in memory text. -->
+  <RimTalk_Topic_Work_Keywords>work job task build construct plant grow</RimTalk_Topic_Work_Keywords>
+  <RimTalk_Topic_Work>work</RimTalk_Topic_Work>
+  <RimTalk_Topic_Combat_Keywords>combat fight battle raid enemy weapon</RimTalk_Topic_Combat_Keywords>
+  <RimTalk_Topic_Combat>combat</RimTalk_Topic_Combat>
+  <RimTalk_Topic_Social_Keywords>chat talk friend relationship like</RimTalk_Topic_Social_Keywords>
+  <RimTalk_Topic_Social>social</RimTalk_Topic_Social>
+  <RimTalk_Topic_Health_Keywords>injured wounded treat tend sick illness healthy</RimTalk_Topic_Health_Keywords>
+  <RimTalk_Topic_Health>health</RimTalk_Topic_Health>
+
+  <!-- Emotion words looked for in the conversation and then in emotional memories -->
+  <RimTalk_Emotion_Keywords>happy glad joyful cheerful sad sorrow unhappy miserable angry furious annoyed hateful afraid scared worried anxious</RimTalk_Emotion_Keywords>
 </LanguageData>

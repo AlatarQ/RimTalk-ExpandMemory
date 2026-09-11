@@ -30,21 +30,37 @@ namespace RimTalk.Memory
             RegexOptions.Compiled
         );
         
-        // 中文停用词表（高频但无意义的词）
-        private static readonly HashSet<string> StopWords = new HashSet<string>
+        // 停用词表（高频但无意义的词）/ stop words, high frequency and meaningless
+        // EnglishWordRegex 也会抽出英文词，所以英文停用词同样需要过滤
+        private static readonly HashSet<string> StopWords = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             "的", "了", "是", "在", "我", "有", "和", "就", "不", "人", "都", "一", "个", "也", "上",
             "他", "们", "到", "说", "要", "去", "你", "会", "着", "没有", "看", "好", "自己", "这",
             "那", "为", "来", "而", "能", "可以", "与", "但", "很", "吗", "吧", "啊", "呢", "么",
             "什么", "怎么", "为什么", "哪里", "谁", "多少", "几个", "一些", "一点", "有点", "太",
-            "非常", "比较", "还", "更", "最", "大", "小", "多", "少", "新", "旧", "好", "坏"
+            "非常", "比较", "还", "更", "最", "大", "小", "多", "少", "新", "旧", "好", "坏",
+
+            "the", "a", "an", "and", "or", "but", "if", "so", "of", "to", "in", "on", "at", "by",
+            "for", "from", "with", "about", "into", "over", "as", "is", "am", "are", "was", "were",
+            "be", "been", "being", "do", "does", "did", "have", "has", "had", "will", "would",
+            "can", "could", "should", "may", "might", "must", "i", "you", "he", "she", "it", "we",
+            "they", "me", "him", "her", "us", "them", "my", "your", "his", "its", "our", "their",
+            "this", "that", "these", "those", "there", "here", "what", "which", "who", "whom",
+            "when", "where", "why", "how", "all", "any", "some", "no", "not", "than", "then",
+            "very", "just", "more", "most", "much", "many", "too", "also", "again", "still",
+            "get", "got", "go", "went", "up", "down", "out", "off", "now", "yes", "ok", "okay"
         };
 
-        // 高权重词前缀（这些词开头的词语更重要）
-        private static readonly HashSet<string> ImportantPrefixes = new HashSet<string>
+        // 高权重词前缀（这些词开头的词语更重要）/ high weight word prefixes
+        private static readonly HashSet<string> ImportantPrefixes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             "龙王", "索拉克", "梅菲斯特", "殖民", "战斗", "受伤", "死亡", "爱情", "友谊", "仇恨",
-            "任务", "建造", "种植", "采矿", "研究", "医疗", "袭击", "防御", "贸易", "谈判"
+            "任务", "建造", "种植", "采矿", "研究", "医疗", "袭击", "防御", "贸易", "谈判",
+
+            "colony", "colonist", "combat", "fight", "battle", "wound", "injur", "death", "died",
+            "kill", "love", "romance", "friend", "hate", "quest", "build", "construct", "plant",
+            "grow", "sow", "mine", "mining", "research", "medic", "heal", "doctor", "raid",
+            "attack", "defen", "trade", "caravan", "negotiat"
         };
 
         /// <summary>
@@ -87,7 +103,7 @@ namespace RimTalk.Memory
                 float importanceBonus = 1.0f;
                 foreach (var prefix in ImportantPrefixes)
                 {
-                    if (score.Word.StartsWith(prefix))
+                    if (score.Word.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
                     {
                         importanceBonus = 1.5f;
                         break;

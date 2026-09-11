@@ -624,19 +624,19 @@ namespace RimTalk.Memory
                     
                     if (ageYears < 3f)
                     {
-                        sb.Append("婴儿 宝宝 ");
+                        KeywordVocabulary.Append(sb, "婴儿 宝宝", "RimTalk_PawnKeywords_Age_Baby");
                     }
                     else if (ageYears < 13f)
                     {
-                        sb.Append("儿童 小孩 ");
+                        KeywordVocabulary.Append(sb, "儿童 小孩", "RimTalk_PawnKeywords_Age_Child");
                     }
                     else if (ageYears < 18f)
                     {
-                        sb.Append("青少年 ");
+                        KeywordVocabulary.Append(sb, "青少年", "RimTalk_PawnKeywords_Age_Teen");
                     }
                     else
                     {
-                        sb.Append("成人 ");
+                        KeywordVocabulary.Append(sb, "成人", "RimTalk_PawnKeywords_Age_Adult");
                     }
                 }
 
@@ -669,19 +669,19 @@ namespace RimTalk.Memory
                 // 4.5. 身份（殖民者/囚犯/奴隶/访客）
                 if (pawn.IsColonist)
                 {
-                    sb.Append("殖民者 ");
+                    KeywordVocabulary.Append(sb, "殖民者", "RimTalk_PawnKeywords_Identity_Colonist");
                 }
                 else if (pawn.IsPrisoner)
                 {
-                    sb.Append("囚犯 ");
+                    KeywordVocabulary.Append(sb, "囚犯", "RimTalk_PawnKeywords_Identity_Prisoner");
                 }
                 else if (pawn.IsSlaveOfColony)
                 {
-                    sb.Append("奴隶 ");
+                    KeywordVocabulary.Append(sb, "奴隶", "RimTalk_PawnKeywords_Identity_Slave");
                 }
                 else if (pawn.HostFaction == Faction.OfPlayer)
                 {
-                    sb.Append("访客 ");
+                    KeywordVocabulary.Append(sb, "访客", "RimTalk_PawnKeywords_Identity_Guest");
                 }
                 else if (pawn.Faction != null && pawn.Faction != Faction.OfPlayer)
                 {
@@ -722,13 +722,13 @@ namespace RimTalk.Memory
                             // 高等级技能额外标记
                             if (level >= 15)
                             {
-                                sb.Append(skillRecord.def.label);
-                                sb.Append("精通 ");
+                                KeywordVocabulary.AppendSkillLevel(
+                                    sb, skillRecord.def.label, "精通", "RimTalk_PawnKeywords_SkillMaster");
                             }
                             else if (level >= 10)
                             {
-                                sb.Append(skillRecord.def.label);
-                                sb.Append("熟练 ");
+                                KeywordVocabulary.AppendSkillLevel(
+                                    sb, skillRecord.def.label, "熟练", "RimTalk_PawnKeywords_SkillSkilled");
                             }
                         }
                     }
@@ -739,11 +739,11 @@ namespace RimTalk.Memory
                 {
                     if (pawn.health.hediffSet.GetInjuredParts().Any())
                     {
-                        sb.Append("受伤 ");
+                        KeywordVocabulary.Append(sb, "受伤", "RimTalk_PawnKeywords_Health_Injured");
                     }
                     else if (!pawn.health.HasHediffsNeedingTend())
                     {
-                        sb.Append("健康 ");
+                        KeywordVocabulary.Append(sb, "健康", "RimTalk_PawnKeywords_Health_Healthy");
                     }
                 }
 

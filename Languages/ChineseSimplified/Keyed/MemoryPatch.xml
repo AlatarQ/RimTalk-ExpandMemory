@@ -719,4 +719,38 @@
   <RimTalk_TagTest_Hint>点击 测试 按钮开始测试</RimTalk_TagTest_Hint>
   <RimTalk_TagTest_EnterTag>请输入标签</RimTalk_TagTest_EnterTag>
   <RimTalk_TagTest_SampleContent>测试内容</RimTalk_TagTest_SampleContent>
+  <!-- Pawn 关键词词表：这些词会加入常识标签的匹配文本，
+       同一个 key 可以放多个同义词，用空格分隔；中文词在代码里保留以兼容老存档 -->
+  <RimTalk_PawnKeywords_Age_Baby>婴儿 宝宝</RimTalk_PawnKeywords_Age_Baby>
+  <RimTalk_PawnKeywords_Age_Child>儿童 小孩</RimTalk_PawnKeywords_Age_Child>
+  <RimTalk_PawnKeywords_Age_Teen>青少年</RimTalk_PawnKeywords_Age_Teen>
+  <RimTalk_PawnKeywords_Age_Adult>成人</RimTalk_PawnKeywords_Age_Adult>
+  <RimTalk_PawnKeywords_Identity_Colonist>殖民者</RimTalk_PawnKeywords_Identity_Colonist>
+  <RimTalk_PawnKeywords_Identity_Prisoner>囚犯</RimTalk_PawnKeywords_Identity_Prisoner>
+  <RimTalk_PawnKeywords_Identity_Slave>奴隶</RimTalk_PawnKeywords_Identity_Slave>
+  <RimTalk_PawnKeywords_Identity_Guest>访客</RimTalk_PawnKeywords_Identity_Guest>
+  <RimTalk_PawnKeywords_Health_Injured>受伤</RimTalk_PawnKeywords_Health_Injured>
+  <RimTalk_PawnKeywords_Health_Healthy>健康</RimTalk_PawnKeywords_Health_Healthy>
+  <!-- {0}=技能名，整体是一个词组，不是列表 -->
+  <RimTalk_PawnKeywords_SkillMaster>{0}精通</RimTalk_PawnKeywords_SkillMaster>
+  <RimTalk_PawnKeywords_SkillSkilled>{0}熟练</RimTalk_PawnKeywords_SkillSkilled>
+  <!-- 对话场景识别（AdvancedScoringSystem），空格分隔，中文词在代码里保留 -->
+  <RimTalk_Scene_Emergency_Keywords>袭击 敌人 危险 受伤 死 快 救</RimTalk_Scene_Emergency_Keywords>
+  <RimTalk_Scene_HistoryRecall_Keywords>过去 以前 曾经 记得 那时 当时</RimTalk_Scene_HistoryRecall_Keywords>
+  <RimTalk_Scene_EmotionalTalk_Keywords>感觉 心情 难过 开心 想 喜欢 讨厌</RimTalk_Scene_EmotionalTalk_Keywords>
+  <RimTalk_Scene_WorkDiscussion_Keywords>工作 任务 建造 种植 研究 搬运</RimTalk_Scene_WorkDiscussion_Keywords>
+  <RimTalk_Scene_Introduction_Keywords>你是 叫什么 来自 背景 擅长</RimTalk_Scene_Introduction_Keywords>
+
+  <!-- 对话主题：_Keywords 用于识别，另一个是主题标签（会在记忆正文里查找） -->
+  <RimTalk_Topic_Work_Keywords>工作 任务 建造 种植</RimTalk_Topic_Work_Keywords>
+  <RimTalk_Topic_Work>工作</RimTalk_Topic_Work>
+  <RimTalk_Topic_Combat_Keywords>战斗 袭击 敌人 武器</RimTalk_Topic_Combat_Keywords>
+  <RimTalk_Topic_Combat>战斗</RimTalk_Topic_Combat>
+  <RimTalk_Topic_Social_Keywords>聊天 朋友 关系 喜欢</RimTalk_Topic_Social_Keywords>
+  <RimTalk_Topic_Social>社交</RimTalk_Topic_Social>
+  <RimTalk_Topic_Health_Keywords>受伤 治疗 生病 健康</RimTalk_Topic_Health_Keywords>
+  <RimTalk_Topic_Health>健康</RimTalk_Topic_Health>
+
+  <!-- 情感词：先在对话里查找，再到情感记忆里查找 -->
+  <RimTalk_Emotion_Keywords>开心 高兴 快乐 愉快 难过 悲伤 伤心 痛苦 愤怒 生气 恼火 讨厌 害怕 恐惧 担心 焦虑</RimTalk_Emotion_Keywords>
 </LanguageData>

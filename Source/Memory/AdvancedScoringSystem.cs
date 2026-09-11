@@ -152,23 +152,28 @@ namespace RimTalk.Memory
             context = context.ToLower();
 
             // 紧急情况关键词
-            if (ContainsAny(context, new[] { "袭击", "敌人", "危险", "受伤", "死", "快", "救" }))
+            if (KeywordVocabulary.ContainsAny(context, new[] { "袭击", "敌人", "危险", "受伤", "死", "快", "救" },
+                    "RimTalk_Scene_Emergency_Keywords"))
                 return ConversationSceneType.Emergency;
 
             // 历史回忆关键词
-            if (ContainsAny(context, new[] { "过去", "以前", "曾经", "记得", "那时", "当时" }))
+            if (KeywordVocabulary.ContainsAny(context, new[] { "过去", "以前", "曾经", "记得", "那时", "当时" },
+                    "RimTalk_Scene_HistoryRecall_Keywords"))
                 return ConversationSceneType.HistoryRecall;
 
             // 情感交流关键词
-            if (ContainsAny(context, new[] { "感觉", "心情", "难过", "开心", "想", "喜欢", "讨厌" }))
+            if (KeywordVocabulary.ContainsAny(context, new[] { "感觉", "心情", "难过", "开心", "想", "喜欢", "讨厌" },
+                    "RimTalk_Scene_EmotionalTalk_Keywords"))
                 return ConversationSceneType.EmotionalTalk;
 
             // 工作讨论关键词
-            if (ContainsAny(context, new[] { "工作", "任务", "建造", "种植", "研究", "搬运" }))
+            if (KeywordVocabulary.ContainsAny(context, new[] { "工作", "任务", "建造", "种植", "研究", "搬运" },
+                    "RimTalk_Scene_WorkDiscussion_Keywords"))
                 return ConversationSceneType.WorkDiscussion;
 
             // 自我介绍关键词
-            if (ContainsAny(context, new[] { "你是", "叫什么", "来自", "背景", "擅长" }))
+            if (KeywordVocabulary.ContainsAny(context, new[] { "你是", "叫什么", "来自", "背景", "擅长" },
+                    "RimTalk_Scene_Introduction_Keywords"))
                 return ConversationSceneType.Introduction;
 
             return ConversationSceneType.Casual;
@@ -296,22 +301,40 @@ namespace RimTalk.Memory
             var topics = new List<string>();
 
             // 工作相关
-            if (ContainsAny(context, new[] { "工作", "任务", "建造", "种植" }))
-                topics.Add("工作");
+            AddTopic(topics, context, new[] { "工作", "任务", "建造", "种植" },
+                "RimTalk_Topic_Work_Keywords", "工作", "RimTalk_Topic_Work");
 
             // 战斗相关
-            if (ContainsAny(context, new[] { "战斗", "袭击", "敌人", "武器" }))
-                topics.Add("战斗");
+            AddTopic(topics, context, new[] { "战斗", "袭击", "敌人", "武器" },
+                "RimTalk_Topic_Combat_Keywords", "战斗", "RimTalk_Topic_Combat");
 
             // 社交相关
-            if (ContainsAny(context, new[] { "聊天", "朋友", "关系", "喜欢" }))
-                topics.Add("社交");
+            AddTopic(topics, context, new[] { "聊天", "朋友", "关系", "喜欢" },
+                "RimTalk_Topic_Social_Keywords", "社交", "RimTalk_Topic_Social");
 
             // 健康相关
-            if (ContainsAny(context, new[] { "受伤", "治疗", "生病", "健康" }))
-                topics.Add("健康");
+            AddTopic(topics, context, new[] { "受伤", "治疗", "生病", "健康" },
+                "RimTalk_Topic_Health_Keywords", "健康", "RimTalk_Topic_Health");
 
             return topics;
+        }
+
+        /// <summary>
+        /// 命中关键词时记录主题标签。
+        /// 标签本身要能在记忆正文里出现，所以中文标签（兼容老存档）
+        /// 和当前语言的标签都加进去。
+        /// </summary>
+        private static void AddTopic(List<string> topics, string context,
+            string[] legacyKeywords, string keywordsKey, string legacyLabel, string labelKey)
+        {
+            if (!KeywordVocabulary.ContainsAny(context, legacyKeywords, keywordsKey))
+                return;
+
+            topics.Add(legacyLabel);
+
+            string label = labelKey.Translate().ToString();
+            if (!string.IsNullOrEmpty(label) && label != legacyLabel && label != labelKey)
+                topics.Add(label);
         }
 
         /// <summary>
@@ -320,13 +343,13 @@ namespace RimTalk.Memory
         private static HashSet<string> ExtractEmotionWords(string context)
         {
             var emotions = new HashSet<string>();
-            var emotionKeywords = new[] 
+            var emotionKeywords = KeywordVocabulary.Merge(new[] 
             { 
                 "开心", "高兴", "快乐", "愉快",
                 "难过", "悲伤", "伤心", "痛苦",
                 "愤怒", "生气", "恼火", "讨厌",
                 "害怕", "恐惧", "担心", "焦虑"
-            };
+            }, "RimTalk_Emotion_Keywords");
 
             foreach (var word in emotionKeywords)
             {
@@ -600,19 +623,6 @@ namespace RimTalk.Memory
 
         #endregion
 
-        #region 辅助方法
-
-        private static bool ContainsAny(string text, string[] keywords)
-        {
-            foreach (var keyword in keywords)
-            {
-                if (text.Contains(keyword))
-                    return true;
-            }
-            return false;
-        }
-
-        #endregion
     }
 
     #region 数据结构
