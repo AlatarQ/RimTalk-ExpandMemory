@@ -208,6 +208,9 @@
     <RimTalk_UI_ImmediateArchive>立即归档 (ELS→CLPA)</RimTalk_UI_ImmediateArchive>
     <RimTalk_UI_ImmediateArchiveNoMemory>立即归档 (无ELS记忆)</RimTalk_UI_ImmediateArchiveNoMemory>
     <RimTalk_UI_ArchiveAll>归档所有殖民者</RimTalk_UI_ArchiveAll>
+
+    <!-- 记忆标签页（ITab_Memory.labelKey）/ memory tab -->
+    <RimTalk_TabMemory>记忆</RimTalk_TabMemory>
     
     <!-- UI Messages 界面消息 -->
     <RimTalk_UI_MemorySummarized>{0} 的短期记忆已总结到中期记忆</RimTalk_UI_MemorySummarized>
