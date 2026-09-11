@@ -24,6 +24,7 @@ public static class RimTalkApiConfigGetter
             Provider = settings.SimpleProvider.Convert() ,
             ApiKey = settings.SimpleApiKey,
             CustomModelName = settings.GetCurrentModel(),
+            CustomUrl = GetRimTalkEndpoint(settings.SimpleProvider),
         }];
 
         // 获取 rimtalk 的 ApiConfig 列表
@@ -36,11 +37,30 @@ public static class RimTalkApiConfigGetter
             IsEnabled = rimTalkApiConfig.IsEnabled,
             Provider = rimTalkApiConfig.Provider.Convert(),
             ApiKey = rimTalkApiConfig.ApiKey,
-            CustomUrl = rimTalkApiConfig.BaseUrl,
+            // 继承 RimTalk 实际使用的端点：优先自定义 BaseUrl，否则取 RimTalk 注册表中的端点。
+            // 这样即使 RimTalk 新增了记忆拓展枚举里没有的 provider（例如 OpenRouter），配置依然有效。
+            CustomUrl = !string.IsNullOrWhiteSpace(rimTalkApiConfig.BaseUrl)
+                ? rimTalkApiConfig.BaseUrl
+                : GetRimTalkEndpoint(rimTalkApiConfig.Provider),
             CustomModelName = string.IsNullOrWhiteSpace(rimTalkApiConfig.CustomModelName)
                 ? rimTalkApiConfig.SelectedModel
                 : rimTalkApiConfig.CustomModelName,
         }).ToList();
+    }
+
+    /// <summary>
+    /// 从 RimTalk 的 provider 注册表取端点 URL（记忆拓展自身不认识的 provider 也能拿到）
+    /// </summary>
+    private static string GetRimTalkEndpoint(global::RimTalk.AIProvider provider)
+    {
+        try
+        {
+            return global::RimTalk.AIProviderRegistry.GetEndpointUrl(provider);
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     private static AIProvider Convert(this global::RimTalk.AIProvider provider) => provider switch
@@ -53,6 +73,7 @@ public static class RimTalkApiConfigGetter
         global::RimTalk.AIProvider.GLMCoding => AIProvider.GLMCoding,
         global::RimTalk.AIProvider.AlibabaIntl => AIProvider.AlibabaIntl,
         global::RimTalk.AIProvider.AlibabaCN => AIProvider.AlibabaCN,
+        global::RimTalk.AIProvider.OpenRouter => AIProvider.OpenRouter,
         global::RimTalk.AIProvider.Player2 => AIProvider.Player2,
         _ => AIProvider.Custom
     };
