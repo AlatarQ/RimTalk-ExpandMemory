@@ -188,7 +188,7 @@ namespace RimTalk.Memory.VectorDB
                     // 显示开始同步的消息
                     LongEventHandler.ExecuteWhenFinished(() =>
                     {
-                        Messages.Message($"正在更新向量库... ({entriesToUpdate.Count} 条新增/修改, {entriesToRemove.Count} 条删除)", MessageTypeDefOf.NeutralEvent, false);
+                        Messages.Message("RimTalk_Vector_Updating".Translate(entriesToUpdate.Count.ToString(), entriesToRemove.Count.ToString()), MessageTypeDefOf.NeutralEvent, false);
                     });
 
                     Log.Message($"[RimTalk-ExpandMemory] VectorService: Syncing {entriesToUpdate.Count} updated entries, removing {entriesToRemove.Count} entries...");
@@ -236,7 +236,7 @@ namespace RimTalk.Memory.VectorDB
                     // 显示完成消息
                     LongEventHandler.ExecuteWhenFinished(() =>
                     {
-                        Messages.Message($"向量库已更新 ({syncedCount} 条)", MessageTypeDefOf.PositiveEvent, false);
+                        Messages.Message("RimTalk_Vector_Updated".Translate(syncedCount.ToString()), MessageTypeDefOf.PositiveEvent, false);
                     });
                 }
                 catch (Exception ex)
@@ -244,7 +244,7 @@ namespace RimTalk.Memory.VectorDB
                     Log.Error($"[RimTalk-ExpandMemory] VectorService: Error syncing library: {ex}");
                     LongEventHandler.ExecuteWhenFinished(() =>
                     {
-                        Messages.Message($"向量库更新失败: {ex.Message}", MessageTypeDefOf.RejectInput, false);
+                        Messages.Message("RimTalk_Vector_UpdateFailed".Translate(ex.Message), MessageTypeDefOf.RejectInput, false);
                     });
                 }
                 finally

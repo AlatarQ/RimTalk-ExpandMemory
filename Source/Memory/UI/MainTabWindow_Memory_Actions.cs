@@ -19,7 +19,7 @@ namespace RimTalk.Memory.UI
                 return;
 
             Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
-                $"确定要总结选中的 {targetMemories.Count} 条记忆吗？",
+                "RimTalk_Memory_ConfirmSummarize".Translate(targetMemories.Count.ToString()),
                 delegate
                 {
                     currentMemoryComp.Summarizer.ManualSummarize(targetMemories);
@@ -27,7 +27,7 @@ namespace RimTalk.Memory.UI
                     filtersDirty = true;
 
                     // 后续考虑发放更全面的 message。以后再说
-                    Messages.Message("总结命令已下发", MessageTypeDefOf.SilentInput, false);
+                    Messages.Message("RimTalk_Memory_SummarizeIssued".Translate(), MessageTypeDefOf.SilentInput, false);
                 }
             ));
         }
@@ -38,7 +38,7 @@ namespace RimTalk.Memory.UI
                 return;
 
             Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
-                $"确定要归档选中的 {targetMemories.Count} 条记忆吗？",
+                "RimTalk_Memory_ConfirmArchive".Translate(targetMemories.Count.ToString()),
                 delegate
                 {
                     currentMemoryComp.Summarizer.Archive(targetMemories);
@@ -46,7 +46,7 @@ namespace RimTalk.Memory.UI
                     filtersDirty = true;
 
                     // 后续考虑发放更全面的 message。以后再说
-                    Messages.Message("归档命令已下发", MessageTypeDefOf.SilentInput, false);
+                    Messages.Message("RimTalk_Memory_ArchiveIssued".Translate(), MessageTypeDefOf.SilentInput, false);
                 }
             ));
         }

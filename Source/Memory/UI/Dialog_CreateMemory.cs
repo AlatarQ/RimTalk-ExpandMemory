@@ -168,12 +168,12 @@ namespace RimTalk.Memory.UI
             {
                 case MemoryLayer.Active:
                     memoryComp.ActiveMemories.Insert(0, newMemory);
-                    Messages.Message($"已添加到 {pawn.LabelShort} 的ABM", MessageTypeDefOf.TaskCompletion);
+                    Messages.Message("RimTalk_Memory_AddedToABM".Translate(pawn.LabelShort), MessageTypeDefOf.TaskCompletion);
                     break;
                     
                 case MemoryLayer.Situational:
                     memoryComp.SituationalMemories.Insert(0, newMemory);
-                    Messages.Message($"已添加到 {pawn.LabelShort} 的SCM", MessageTypeDefOf.TaskCompletion);
+                    Messages.Message("RimTalk_Memory_AddedToSCM".Translate(pawn.LabelShort), MessageTypeDefOf.TaskCompletion);
                     break;
                     
                 case MemoryLayer.EventLog:

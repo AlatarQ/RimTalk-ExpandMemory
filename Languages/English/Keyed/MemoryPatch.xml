@@ -685,4 +685,38 @@ Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_
   <RimTalk_Combat_TargetCount>{0}x {1}</RimTalk_Combat_TargetCount>
   <!-- {0} = attack description, {1} = target list, {2} = "and others" or empty -->
   <RimTalk_Combat_MultiTarget>Repeatedly {0} {1}{2}</RimTalk_Combat_MultiTarget>
+  <!-- Generic buttons -->
+  <RimTalk_Common_Save>Save</RimTalk_Common_Save>
+  <RimTalk_Common_Cancel>Cancel</RimTalk_Common_Cancel>
+  <RimTalk_Common_Add>Add</RimTalk_Common_Add>
+  <RimTalk_Common_Remove>Remove</RimTalk_Common_Remove>
+
+  <!-- Dialog_EditMemory -->
+  <RimTalk_EditMemory_Title>Edit memory</RimTalk_EditMemory_Title>
+  <!-- {0} = memory type, {1} = memory layer, {2} = age -->
+  <RimTalk_EditMemory_Info1>Type: {0}  |  Layer: {1}  |  Age: {2}</RimTalk_EditMemory_Info1>
+  <!-- {0} = importance, {1} = activity -->
+  <RimTalk_EditMemory_Info2>Importance: {0}  |  Activity: {1}</RimTalk_EditMemory_Info2>
+  <RimTalk_EditMemory_Content>Content:</RimTalk_EditMemory_Content>
+  <RimTalk_EditMemory_Note>Note:</RimTalk_EditMemory_Note>
+  <RimTalk_EditMemory_Tags>Tags:</RimTalk_EditMemory_Tags>
+  <RimTalk_EditMemory_Pin>Pin this memory (it will not be deleted or decay)</RimTalk_EditMemory_Pin>
+  <RimTalk_EditMemory_CustomTag>Custom tag:</RimTalk_EditMemory_CustomTag>
+  <RimTalk_EditMemory_Updated>Memory updated</RimTalk_EditMemory_Updated>
+
+  <!-- Batch actions in the memory tab. {0} = number of selected memories -->
+  <RimTalk_Memory_ConfirmSummarize>Summarize the {0} selected memories?</RimTalk_Memory_ConfirmSummarize>
+  <RimTalk_Memory_SummarizeIssued>Summarization requested</RimTalk_Memory_SummarizeIssued>
+  <RimTalk_Memory_ConfirmArchive>Archive the {0} selected memories?</RimTalk_Memory_ConfirmArchive>
+  <RimTalk_Memory_ArchiveIssued>Archiving requested</RimTalk_Memory_ArchiveIssued>
+
+  <!-- Vector database. {0}/{1} = entry counts, or the error message -->
+  <RimTalk_Vector_Updating>Updating the vector store... ({0} added or changed, {1} removed)</RimTalk_Vector_Updating>
+  <RimTalk_Vector_Updated>Vector store updated ({0} entries)</RimTalk_Vector_Updated>
+  <RimTalk_Vector_UpdateFailed>Vector store update failed: {0}</RimTalk_Vector_UpdateFailed>
+  <!-- Dialog_TagTest -->
+  <RimTalk_TagTest_Run>Test</RimTalk_TagTest_Run>
+  <RimTalk_TagTest_Hint>Press the Test button to start</RimTalk_TagTest_Hint>
+  <RimTalk_TagTest_EnterTag>Enter a tag first</RimTalk_TagTest_EnterTag>
+  <RimTalk_TagTest_SampleContent>test content</RimTalk_TagTest_SampleContent>
 </LanguageData>

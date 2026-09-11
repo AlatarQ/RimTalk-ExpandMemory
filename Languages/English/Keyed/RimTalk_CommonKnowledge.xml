@@ -69,6 +69,8 @@
     <RimTalk_Memory_ImportanceLabel>Importance: {0}</RimTalk_Memory_ImportanceLabel>
     <RimTalk_Memory_PinMemory>Pin this memory (won't be auto-deleted or decayed)</RimTalk_Memory_PinMemory>
     <RimTalk_Memory_ContentRequired>Memory content cannot be empty</RimTalk_Memory_ContentRequired>
+    <RimTalk_Memory_AddedToABM>Added memory to {0}'s ABM (Active Memory)</RimTalk_Memory_AddedToABM>
+    <RimTalk_Memory_AddedToSCM>Added memory to {0}'s SCM (Situational Memory)</RimTalk_Memory_AddedToSCM>
     <RimTalk_Memory_AddedToELS>Added memory to {0}'s ELS (Mid-term Memory)</RimTalk_Memory_AddedToELS>
     <RimTalk_Memory_AddedToCLPA>Added memory to {0}'s CLPA (Long-term Memory)</RimTalk_Memory_AddedToCLPA>
     
@@ -104,6 +106,13 @@
     <RimTalk_Knowledge_CategoryHistory>History</RimTalk_Knowledge_CategoryHistory>
     <RimTalk_Knowledge_CategoryOther>Other</RimTalk_Knowledge_CategoryOther>
     <RimTalk_Knowledge_CategoryUnknown>Unknown</RimTalk_Knowledge_CategoryUnknown>
+    <RimTalk_Knowledge_CategoryAuto>Infer automatically</RimTalk_Knowledge_CategoryAuto>
+    <RimTalk_Knowledge_CategoryAutoSuffix>(automatic)</RimTalk_Knowledge_CategoryAutoSuffix>
+    <RimTalk_Knowledge_Category>Category</RimTalk_Knowledge_Category>
+    <RimTalk_Knowledge_CategoryLabel>Category:</RimTalk_Knowledge_CategoryLabel>
+    <!-- {0} = the category inferred from the tag -->
+    <RimTalk_Knowledge_CategoryInferred>Inferred automatically &#8594; {0}</RimTalk_Knowledge_CategoryInferred>
+    <RimTalk_Knowledge_MatchModeLabel>Match mode:</RimTalk_Knowledge_MatchModeLabel>
     
     <RimTalk_Knowledge_Total>Total: {0}</RimTalk_Knowledge_Total>
     <RimTalk_Knowledge_Enabled>Enabled: {0}</RimTalk_Knowledge_Enabled>

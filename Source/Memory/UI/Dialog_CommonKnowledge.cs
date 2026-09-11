@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -953,10 +953,10 @@ namespace RimTalk.Memory.UI
             var entryCat = CommonKnowledgeUIHelpers.GetEntryCategory(entry);
             string catDisplay = CommonKnowledgeUIHelpers.GetCategoryLabel(entryCat);
             if (entry.category == KnowledgeEntryCategory.None)
-                catDisplay += " (自动)";
+                catDisplay += " " + "RimTalk_Knowledge_CategoryAutoSuffix".Translate().ToString();
             CommonKnowledgeUIHelpers.DrawDetailField(
                 new Rect(0f, scrollY, scrollViewRect.width, 25f),
-                "分类",
+                "RimTalk_Knowledge_Category".Translate(),
                 catDisplay
             );
             scrollY += 30f;
@@ -1066,7 +1066,7 @@ namespace RimTalk.Memory.UI
             y += 30f;
             
             // ⭐ Category dropdown (after tag)
-            Widgets.Label(new Rect(rect.x, y, 100f, 25f), "分类:");
+            Widgets.Label(new Rect(rect.x, y, 100f, 25f), "RimTalk_Knowledge_CategoryLabel".Translate());
             string catLabel = CommonKnowledgeUIHelpers.GetExplicitCategoryLabel(editCategory);
             // 显示推断提示
             if (editCategory == KnowledgeEntryCategory.None && !string.IsNullOrEmpty(editTag))
@@ -1074,7 +1074,7 @@ namespace RimTalk.Memory.UI
                 var inferred = CommonKnowledgeUIHelpers.GetEntryCategory(
                     new CommonKnowledgeEntry(editTag, "") { category = KnowledgeEntryCategory.None });
                 string inferredName = CommonKnowledgeUIHelpers.GetCategoryLabel(inferred);
-                catLabel = "自动推断 → " + inferredName;
+                catLabel = "RimTalk_Knowledge_CategoryInferred".Translate(inferredName).ToString();
             }
             if (Widgets.ButtonText(new Rect(rect.x + 100f, y, rect.width - 100f, 25f), catLabel))
             {
@@ -1114,7 +1114,7 @@ namespace RimTalk.Memory.UI
             y += 35f;
             
             // Match Mode
-            Widgets.Label(new Rect(rect.x, y, 100f, 25f), "匹配模式:");
+            Widgets.Label(new Rect(rect.x, y, 100f, 25f), "RimTalk_Knowledge_MatchModeLabel".Translate());
             if (Widgets.ButtonText(new Rect(rect.x + 100f, y, rect.width - 100f, 25f), editMatchMode.ToString()))
             {
                 List<FloatMenuOption> options = new List<FloatMenuOption>();

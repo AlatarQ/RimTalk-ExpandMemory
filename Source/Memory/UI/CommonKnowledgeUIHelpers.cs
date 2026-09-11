@@ -154,19 +154,19 @@ namespace RimTalk.Memory.UI
         }
         
         /// <summary>
-        /// 获取显式分类的中文显示名称
+        /// 获取显式分类的显示名称 / explicit category label
         /// </summary>
         public static string GetExplicitCategoryLabel(KnowledgeEntryCategory cat)
         {
             switch (cat)
             {
-                case KnowledgeEntryCategory.None: return "自动推断";
-                case KnowledgeEntryCategory.Instructions: return "指令规则";
-                case KnowledgeEntryCategory.Lore: return "世界观设定";
-                case KnowledgeEntryCategory.PawnStatus: return "殖民者状态";
-                case KnowledgeEntryCategory.History: return "历史记录";
-                case KnowledgeEntryCategory.Other: return "其他";
-                default: return "未知";
+                case KnowledgeEntryCategory.None: return "RimTalk_Knowledge_CategoryAuto".Translate();
+                case KnowledgeEntryCategory.Instructions: return "RimTalk_Knowledge_CategoryInstructions".Translate();
+                case KnowledgeEntryCategory.Lore: return "RimTalk_Knowledge_CategoryLore".Translate();
+                case KnowledgeEntryCategory.PawnStatus: return "RimTalk_Knowledge_CategoryPawnStatus".Translate();
+                case KnowledgeEntryCategory.History: return "RimTalk_Knowledge_CategoryHistory".Translate();
+                case KnowledgeEntryCategory.Other: return "RimTalk_Knowledge_CategoryOther".Translate();
+                default: return "RimTalk_Knowledge_CategoryUnknown".Translate();
             }
         }
         

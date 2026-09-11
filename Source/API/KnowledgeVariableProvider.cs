@@ -295,18 +295,18 @@ namespace RimTalk.Memory.API
         }
 
         /// <summary>
-        /// 获取分类的中文显示名称
+        /// 获取分类的显示名称 / category label
         /// </summary>
         private static string GetCategoryDisplayName(KnowledgeCategory category)
         {
             switch (category)
             {
-                case KnowledgeCategory.Instructions: return "规则";
-                case KnowledgeCategory.Lore: return "世界观";
-                case KnowledgeCategory.PawnStatus: return "殖民者状态";
-                case KnowledgeCategory.History: return "历史";
-                case KnowledgeCategory.Other: return "其他";
-                default: return "未知";
+                case KnowledgeCategory.Instructions: return "RimTalk_Knowledge_CategoryInstructions".Translate();
+                case KnowledgeCategory.Lore: return "RimTalk_Knowledge_CategoryLore".Translate();
+                case KnowledgeCategory.PawnStatus: return "RimTalk_Knowledge_CategoryPawnStatus".Translate();
+                case KnowledgeCategory.History: return "RimTalk_Knowledge_CategoryHistory".Translate();
+                case KnowledgeCategory.Other: return "RimTalk_Knowledge_CategoryOther".Translate();
+                default: return "RimTalk_Knowledge_CategoryUnknown".Translate();
             }
         }
 

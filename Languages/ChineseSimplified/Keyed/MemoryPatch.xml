@@ -685,4 +685,38 @@
   <RimTalk_Combat_TargetCount>{0}个{1}</RimTalk_Combat_TargetCount>
   <!-- {0}=攻击描述，{1}=目标列表，{2}=“等”或空 -->
   <RimTalk_Combat_MultiTarget>连续{0}了{1}{2}</RimTalk_Combat_MultiTarget>
+  <!-- 通用按钮 -->
+  <RimTalk_Common_Save>保存</RimTalk_Common_Save>
+  <RimTalk_Common_Cancel>取消</RimTalk_Common_Cancel>
+  <RimTalk_Common_Add>添加</RimTalk_Common_Add>
+  <RimTalk_Common_Remove>移除</RimTalk_Common_Remove>
+
+  <!-- Dialog_EditMemory -->
+  <RimTalk_EditMemory_Title>编辑记忆</RimTalk_EditMemory_Title>
+  <!-- {0}=类型，{1}=层级，{2}=时间 -->
+  <RimTalk_EditMemory_Info1>类型: {0}  |  层级: {1}  |  时间: {2}</RimTalk_EditMemory_Info1>
+  <!-- {0}=重要性，{1}=活跃度 -->
+  <RimTalk_EditMemory_Info2>重要性: {0}  |  活跃度: {1}</RimTalk_EditMemory_Info2>
+  <RimTalk_EditMemory_Content>内容:</RimTalk_EditMemory_Content>
+  <RimTalk_EditMemory_Note>备注:</RimTalk_EditMemory_Note>
+  <RimTalk_EditMemory_Tags>标签:</RimTalk_EditMemory_Tags>
+  <RimTalk_EditMemory_Pin>固定此记忆（不会被删除或衰减）</RimTalk_EditMemory_Pin>
+  <RimTalk_EditMemory_CustomTag>自定义标签:</RimTalk_EditMemory_CustomTag>
+  <RimTalk_EditMemory_Updated>记忆已更新</RimTalk_EditMemory_Updated>
+
+  <!-- 记忆界面的批量操作，{0}=选中的记忆条数 -->
+  <RimTalk_Memory_ConfirmSummarize>确定要总结选中的 {0} 条记忆吗？</RimTalk_Memory_ConfirmSummarize>
+  <RimTalk_Memory_SummarizeIssued>总结命令已下发</RimTalk_Memory_SummarizeIssued>
+  <RimTalk_Memory_ConfirmArchive>确定要归档选中的 {0} 条记忆吗？</RimTalk_Memory_ConfirmArchive>
+  <RimTalk_Memory_ArchiveIssued>归档命令已下发</RimTalk_Memory_ArchiveIssued>
+
+  <!-- 向量库，{0}/{1}=条目数量或错误信息 -->
+  <RimTalk_Vector_Updating>正在更新向量库... ({0} 条新增/修改, {1} 条删除)</RimTalk_Vector_Updating>
+  <RimTalk_Vector_Updated>向量库已更新 ({0} 条)</RimTalk_Vector_Updated>
+  <RimTalk_Vector_UpdateFailed>向量库更新失败: {0}</RimTalk_Vector_UpdateFailed>
+  <!-- Dialog_TagTest -->
+  <RimTalk_TagTest_Run>测试</RimTalk_TagTest_Run>
+  <RimTalk_TagTest_Hint>点击 测试 按钮开始测试</RimTalk_TagTest_Hint>
+  <RimTalk_TagTest_EnterTag>请输入标签</RimTalk_TagTest_EnterTag>
+  <RimTalk_TagTest_SampleContent>测试内容</RimTalk_TagTest_SampleContent>
 </LanguageData>
