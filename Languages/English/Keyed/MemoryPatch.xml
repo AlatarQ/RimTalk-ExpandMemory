@@ -648,4 +648,41 @@ Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_
   <!-- {0} = colonist name, {1} = workbench name -->
   <RimTalk_Event_CraftedAtWorkbench>{0} makes items at the {1}</RimTalk_Event_CraftedAtWorkbench>
   <RimTalk_Event_CraftedAtWorkbenchAnon>items are made at the {0}</RimTalk_Event_CraftedAtWorkbenchAnon>
+  <!-- Action / combat memories (JobMemoryCapturer, CombatMemoryCapturer) -->
+  <!-- Aggregated job descriptions, used as a verb inside RimTalk_Job_FuzzyContent -->
+  <RimTalk_Job_Agg_Haul>hauled</RimTalk_Job_Agg_Haul>
+  <RimTalk_Job_Agg_Harvest>harvested</RimTalk_Job_Agg_Harvest>
+  <RimTalk_Job_Agg_CutPlant>cut down</RimTalk_Job_Agg_CutPlant>
+  <RimTalk_Job_Agg_Mine>mined</RimTalk_Job_Agg_Mine>
+  <RimTalk_Job_Agg_Repair>repaired</RimTalk_Job_Agg_Repair>
+  <RimTalk_Job_Agg_Milk>milked</RimTalk_Job_Agg_Milk>
+  <RimTalk_Job_Agg_Shear>sheared</RimTalk_Job_Agg_Shear>
+  <RimTalk_Job_Agg_Deconstruct>deconstructed</RimTalk_Job_Agg_Deconstruct>
+  <RimTalk_Job_Agg_Build>built</RimTalk_Job_Agg_Build>
+  <RimTalk_Job_Agg_Sow>sowed</RimTalk_Job_Agg_Sow>
+  <RimTalk_Job_Agg_Clean>cleaned</RimTalk_Job_Agg_Clean>
+  <RimTalk_Job_Agg_AttackMelee>attacked in melee</RimTalk_Job_Agg_AttackMelee>
+  <RimTalk_Job_Agg_AttackStatic>shot at</RimTalk_Job_Agg_AttackStatic>
+  <!-- How long the repeated action took -->
+  <RimTalk_Job_Duration_Continuous>Without a break</RimTalk_Job_Duration_Continuous>
+  <RimTalk_Job_Duration_TwoHours>Within two hours</RimTalk_Job_Duration_TwoHours>
+  <RimTalk_Job_Duration_FewHours>Over a few hours</RimTalk_Job_Duration_FewHours>
+  <RimTalk_Job_Duration_HalfDay>Over half a day</RimTalk_Job_Duration_HalfDay>
+  <RimTalk_Job_Duration_MostOfDay>Over most of a day</RimTalk_Job_Duration_MostOfDay>
+  <RimTalk_Job_Duration_WholeDay>Over a whole day</RimTalk_Job_Duration_WholeDay>
+  <RimTalk_Job_Target_Self>themselves</RimTalk_Job_Target_Self>
+  <RimTalk_Job_TargetSeparator>, </RimTalk_Job_TargetSeparator>
+  <RimTalk_Job_MoreTargets> and others</RimTalk_Job_MoreTargets>
+  <!-- {0} = duration, {1} = repeat count, {2} = the game's own job report -->
+  <RimTalk_Job_ExactContent>{0}, {1} times: {2}</RimTalk_Job_ExactContent>
+  <!-- {0} = duration, {1} = job description, {2} = repeat count, {3} = target list, {4} = "and others" or empty -->
+  <RimTalk_Job_FuzzyContent>{0}, {1} {3}{4} {2} times.</RimTalk_Job_FuzzyContent>
+  <RimTalk_Combat_CellTarget>a target area</RimTalk_Combat_CellTarget>
+  <RimTalk_Combat_UnknownTarget>a target</RimTalk_Combat_UnknownTarget>
+  <!-- {0} = attack description, {1} = target name -->
+  <RimTalk_Combat_SingleTarget>{0} {1}</RimTalk_Combat_SingleTarget>
+  <!-- {0} = number of individuals, {1} = their name -->
+  <RimTalk_Combat_TargetCount>{0}x {1}</RimTalk_Combat_TargetCount>
+  <!-- {0} = attack description, {1} = target list, {2} = "and others" or empty -->
+  <RimTalk_Combat_MultiTarget>Repeatedly {0} {1}{2}</RimTalk_Combat_MultiTarget>
 </LanguageData>

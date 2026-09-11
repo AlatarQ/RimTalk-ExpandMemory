@@ -28,7 +28,8 @@ public class CombatMemoryCapturer
     private const float CombatImportance = 0.9f;
     // 对地攻击使用的固定 thingID key（Thing.thingIDNumber 不会取到负值）
     private const int CellTargetId = -1;
-    private const string CellTargetName = "目标区域";
+    // 对地攻击的目标名称（取自当前语言的 Keyed 翻译）
+    private static string CellTargetName => "RimTalk_Combat_CellTarget".Translate().ToString();
 
     // --- 实例成员 ---
 
@@ -144,7 +145,7 @@ public class CombatMemoryCapturer
     /// </summary>
     private static string GetTargetName(LocalTargetInfo target) =>
         target.Thing is { } thing
-        ? thing.LabelShort ?? thing.def?.label ?? "目标"
+        ? thing.LabelShort ?? thing.def?.label ?? "RimTalk_Combat_UnknownTarget".Translate().ToString()
         : CellTargetName;
 
     /// <summary>
@@ -154,18 +155,28 @@ public class CombatMemoryCapturer
     /// </summary>
     private string BuildContent()
     {
-        string action = _lastAttackWasMelee ? "近身攻击" : "射击";
+        string action = (_lastAttackWasMelee
+            ? "RimTalk_Job_Agg_AttackMelee"
+            : "RimTalk_Job_Agg_AttackStatic").Translate().ToString();
 
         // 单目标：会话内仅命中一个个体的情形
         if (DictTargetNameToIds.Count == 1
             && DictTargetNameToIds.First() is { Value.Count: 1 } kvp)
-            return $"{action}{kvp.Key}";
+            return "RimTalk_Combat_SingleTarget".Translate(action, kvp.Key).ToString();
 
         // 多目标：按命中个体数降序（前3，其余以"等"省略）
         var names = DictTargetNameToIds
             .OrderByDescending(kv => kv.Value.Count)
             .ToList();
 
-        return $"连续{action}了{string.Join("、", names.Take(3).Select(kv => $"{kv.Value.Count}个{kv.Key}"))}{(names.Count > 3 ? "等" : "")}";
+        string targets = string.Join(
+            "RimTalk_Job_TargetSeparator".Translate().ToString(),
+            names.Take(3).Select(kv =>
+                "RimTalk_Combat_TargetCount".Translate(kv.Value.Count.ToString(), kv.Key).ToString()));
+        
+        return "RimTalk_Combat_MultiTarget".Translate(
+            action,
+            targets,
+            names.Count > 3 ? "RimTalk_Job_MoreTargets".Translate().ToString() : "").ToString();
     }
 }

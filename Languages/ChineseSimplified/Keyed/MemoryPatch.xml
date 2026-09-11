@@ -648,4 +648,41 @@
   <!-- {0}=殖民者名字，{1}=工作台名称 -->
   <RimTalk_Event_CraftedAtWorkbench>{0}在{1}制造物品</RimTalk_Event_CraftedAtWorkbench>
   <RimTalk_Event_CraftedAtWorkbenchAnon>在{0}制造物品</RimTalk_Event_CraftedAtWorkbenchAnon>
+  <!-- 行为/战斗记忆（JobMemoryCapturer、CombatMemoryCapturer） -->
+  <!-- 可聚合工作的描述，作为动词嵌入 RimTalk_Job_FuzzyContent -->
+  <RimTalk_Job_Agg_Haul>搬运</RimTalk_Job_Agg_Haul>
+  <RimTalk_Job_Agg_Harvest>收获</RimTalk_Job_Agg_Harvest>
+  <RimTalk_Job_Agg_CutPlant>割除</RimTalk_Job_Agg_CutPlant>
+  <RimTalk_Job_Agg_Mine>采矿</RimTalk_Job_Agg_Mine>
+  <RimTalk_Job_Agg_Repair>修理</RimTalk_Job_Agg_Repair>
+  <RimTalk_Job_Agg_Milk>挤奶</RimTalk_Job_Agg_Milk>
+  <RimTalk_Job_Agg_Shear>剪毛</RimTalk_Job_Agg_Shear>
+  <RimTalk_Job_Agg_Deconstruct>拆除</RimTalk_Job_Agg_Deconstruct>
+  <RimTalk_Job_Agg_Build>建造</RimTalk_Job_Agg_Build>
+  <RimTalk_Job_Agg_Sow>种植</RimTalk_Job_Agg_Sow>
+  <RimTalk_Job_Agg_Clean>清洁</RimTalk_Job_Agg_Clean>
+  <RimTalk_Job_Agg_AttackMelee>近身攻击</RimTalk_Job_Agg_AttackMelee>
+  <RimTalk_Job_Agg_AttackStatic>射击</RimTalk_Job_Agg_AttackStatic>
+  <!-- 重复行为的耗时描述 -->
+  <RimTalk_Job_Duration_Continuous>连续</RimTalk_Job_Duration_Continuous>
+  <RimTalk_Job_Duration_TwoHours>两小时内</RimTalk_Job_Duration_TwoHours>
+  <RimTalk_Job_Duration_FewHours>花费几小时</RimTalk_Job_Duration_FewHours>
+  <RimTalk_Job_Duration_HalfDay>花费小半天</RimTalk_Job_Duration_HalfDay>
+  <RimTalk_Job_Duration_MostOfDay>花费大半天</RimTalk_Job_Duration_MostOfDay>
+  <RimTalk_Job_Duration_WholeDay>花费一整天</RimTalk_Job_Duration_WholeDay>
+  <RimTalk_Job_Target_Self>自己</RimTalk_Job_Target_Self>
+  <RimTalk_Job_TargetSeparator>、</RimTalk_Job_TargetSeparator>
+  <RimTalk_Job_MoreTargets>等</RimTalk_Job_MoreTargets>
+  <!-- {0}=耗时，{1}=重复次数，{2}=游戏自带的工作描述 -->
+  <RimTalk_Job_ExactContent>{0}{1}次{2}</RimTalk_Job_ExactContent>
+  <!-- {0}=耗时，{1}=工作描述，{2}=重复次数，{3}=目标列表，{4}=“等”或空 -->
+  <RimTalk_Job_FuzzyContent>{0}{1}了{2}次{3}{4}。</RimTalk_Job_FuzzyContent>
+  <RimTalk_Combat_CellTarget>目标区域</RimTalk_Combat_CellTarget>
+  <RimTalk_Combat_UnknownTarget>目标</RimTalk_Combat_UnknownTarget>
+  <!-- {0}=攻击描述，{1}=目标名称 -->
+  <RimTalk_Combat_SingleTarget>{0}{1}</RimTalk_Combat_SingleTarget>
+  <!-- {0}=个体数量，{1}=个体名称 -->
+  <RimTalk_Combat_TargetCount>{0}个{1}</RimTalk_Combat_TargetCount>
+  <!-- {0}=攻击描述，{1}=目标列表，{2}=“等”或空 -->
+  <RimTalk_Combat_MultiTarget>连续{0}了{1}{2}</RimTalk_Combat_MultiTarget>
 </LanguageData>

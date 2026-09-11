@@ -23,6 +23,7 @@ public class JobMemoryCapturer
 
     // 可模糊聚合工作-描述字典
     // 命中字典的 job 允许在 target 等要素不同时仍然聚合
+    // 存的是翻译 key，用到时才 Translate，避免静态构造早于语言加载
     private static readonly Dictionary<JobDef, string> _dictAggregatedJobToDesc = new();
 
     // 特定工作-重要性字典
@@ -66,33 +67,33 @@ public class JobMemoryCapturer
 
             desc = defName switch
             {
-                _ when defName.Contains("Haul") => "搬运",
-                _ when defName.Contains("Harvest") => "收获",
-                _ when defName.Contains("CutPlant") => "割除",
-                _ when defName.Contains("Mine") => "采矿",
-                _ when defName.Contains("Repair") => "修理",
-                _ when defName.Contains("Milk") => "挤奶",
-                _ when defName.Contains("Shear") => "剪毛",
+                _ when defName.Contains("Haul") => "RimTalk_Job_Agg_Haul",
+                _ when defName.Contains("Harvest") => "RimTalk_Job_Agg_Harvest",
+                _ when defName.Contains("CutPlant") => "RimTalk_Job_Agg_CutPlant",
+                _ when defName.Contains("Mine") => "RimTalk_Job_Agg_Mine",
+                _ when defName.Contains("Repair") => "RimTalk_Job_Agg_Repair",
+                _ when defName.Contains("Milk") => "RimTalk_Job_Agg_Milk",
+                _ when defName.Contains("Shear") => "RimTalk_Job_Agg_Shear",
 
                 _ when defName.Contains("Deconstruct")
                 || defName.Contains("RemoveFloor")
                 || defName.Contains("RemoveRoof")
                 || defName.Contains("Uninstall")
-                => "拆除",
+                => "RimTalk_Job_Agg_Deconstruct",
 
                 _ when defName.Contains("Frame")
                 || defName.Contains("BuildRoof")
                 || defName.Contains("Smooth")
-                => "建造",
+                => "RimTalk_Job_Agg_Build",
 
                 _ when defName.Contains("Sow")
                 || defName.Contains("Replant")
                 || defName.Contains("PlantSeed")
-                => "种植",
+                => "RimTalk_Job_Agg_Sow",
 
                 _ when defName.Contains("Clean")
                 || defName.Contains("Clear")
-                => "清洁",
+                => "RimTalk_Job_Agg_Clean",
 
                 _ => desc
             };
@@ -107,8 +108,8 @@ public class JobMemoryCapturer
             if (jobDef is null) return;
             _dictAggregatedJobToDesc[jobDef] = desc;
         }
-        AddToAggregatedDict(JobDefOf.AttackMelee, "近身攻击");
-        AddToAggregatedDict(JobDefOf.AttackStatic, "射击");
+        AddToAggregatedDict(JobDefOf.AttackMelee, "RimTalk_Job_Agg_AttackMelee");
+        AddToAggregatedDict(JobDefOf.AttackStatic, "RimTalk_Job_Agg_AttackStatic");
 
         // 特定工作-重要性字典初始化，精确匹配规则
         static void AddToImportanceDict(JobDef jobDef, float importance)
@@ -408,7 +409,7 @@ public class JobMemoryCapturer
 
         // 提取目标名称
         // 目标即自身时
-        if (targetThing == Parent) return "自己";
+        if (targetThing == Parent) return "RimTalk_Job_Target_Self".Translate().ToString();
 
         // 泰南你无敌了，原版 API，甚至还是属性 API，能搞出 NRE
         try
@@ -428,22 +429,31 @@ public class JobMemoryCapturer
     }
 
     // 生成合并/聚合记忆更新文本
-    private string BuildExactContent() => $"{GetDurationDesc()}{_repeatCount}次{_lastJobReport}";
+    private string BuildExactContent() =>
+        "RimTalk_Job_ExactContent"
+            .Translate(GetDurationDesc(), _repeatCount.ToString(), _lastJobReport).ToString();
     private string BuildFuzzyContent() =>
-        $"{GetDurationDesc()}{_lastJobAggregateDesc}了{_repeatCount}次{string.Join("、", TargetNames.Take(3))}{(TargetNames.Count > 3 ? "等" : "")}。";
+        "RimTalk_Job_FuzzyContent".Translate(
+            GetDurationDesc(),
+            _lastJobAggregateDesc.Translate().ToString(),
+            _repeatCount.ToString(),
+            string.Join("RimTalk_Job_TargetSeparator".Translate().ToString(), TargetNames.Take(3)),
+            TargetNames.Count > 3 ? "RimTalk_Job_MoreTargets".Translate().ToString() : "").ToString();
 
     // 获取耗时描述
     private string GetDurationDesc()
     {
-        return (GenTicks.TicksGame - _startGameTick) switch
+        string key = (GenTicks.TicksGame - _startGameTick) switch
         {
-            <= GenDate.TicksPerHour => "连续",
-            <= 2 * GenDate.TicksPerHour => "两小时内",
-            <= 4 * GenDate.TicksPerHour => "花费几小时",
-            <= 8 * GenDate.TicksPerHour => "花费小半天",
-            <= 12 * GenDate.TicksPerHour => "花费大半天",
-            _ => "花费一整天" // 此分支理论上不触发
+            <= GenDate.TicksPerHour => "RimTalk_Job_Duration_Continuous",
+            <= 2 * GenDate.TicksPerHour => "RimTalk_Job_Duration_TwoHours",
+            <= 4 * GenDate.TicksPerHour => "RimTalk_Job_Duration_FewHours",
+            <= 8 * GenDate.TicksPerHour => "RimTalk_Job_Duration_HalfDay",
+            <= 12 * GenDate.TicksPerHour => "RimTalk_Job_Duration_MostOfDay",
+            _ => "RimTalk_Job_Duration_WholeDay" // 此分支理论上不触发
         };
+        
+        return key.Translate().ToString();
     }
 
     // 计算重要性增量
