@@ -606,4 +606,20 @@ Condense core traits and milestone events
 Merge similar experiences and highlight long-term trends
 Be extremely concise, 40 words maximum
 Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_DeepArchive>
+  <!-- Colonist status common knowledge (PawnStatusKnowledgeGenerator) -->
+  <!-- {0} = quadrum label, {1} = day of quadrum, {2} = year. Keep the date short, it is embedded in the sentences below and parsed back out of old entries. -->
+  <RimTalk_PawnStatus_JoinDateFormat>{0} {1}, {2}</RimTalk_PawnStatus_JoinDateFormat>
+  <!-- {0} = colonist name, {1} = join date, {2} = days in colony. The join date MUST stay inside round brackets and nothing else may be bracketed, the mod parses it back to keep the date stable. -->
+  <RimTalk_PawnStatus_NewMember_Today>{0} is a new member of the colony and joined today ({1})</RimTalk_PawnStatus_NewMember_Today>
+  <RimTalk_PawnStatus_NewMember_Yesterday>{0} is a new member of the colony and joined yesterday ({1})</RimTalk_PawnStatus_NewMember_Yesterday>
+  <RimTalk_PawnStatus_NewMember_DaysAgo>{0} is a new member of the colony and joined {2} days ago ({1})</RimTalk_PawnStatus_NewMember_DaysAgo>
+  <RimTalk_PawnStatus_VeteranMember>{0} is a long-standing member of the colony, having been here for {2} days since joining ({1}), and is familiar with its history and with the relationships between its members</RimTalk_PawnStatus_VeteranMember>
+  <!-- {0} = the sentence above, {1} = race information -->
+  <RimTalk_PawnStatus_WithRace>{0}. {1}</RimTalk_PawnStatus_WithRace>
+  <RimTalk_PawnStatus_WithRace_New>{0}. {1}. Not yet familiar with the colony's history or with the relationships between its members</RimTalk_PawnStatus_WithRace_New>
+  <!-- {0} = colonist name, {1} = race (or race-xenotype) -->
+  <RimTalk_PawnStatus_RaceInfo>{0}'s race is {1}</RimTalk_PawnStatus_RaceInfo>
+  <RimTalk_PawnStatus_UnknownRace>unknown</RimTalk_PawnStatus_UnknownRace>
+  <!-- Comma separated fragments that mark an entry as auto generated (i.e. safe to overwrite). They must appear verbatim in the sentences above. -->
+  <RimTalk_PawnStatus_AutoKeywords>new member of the colony,long-standing member of the colony,joined today,joined yesterday,days ago,since joining</RimTalk_PawnStatus_AutoKeywords>
 </LanguageData>

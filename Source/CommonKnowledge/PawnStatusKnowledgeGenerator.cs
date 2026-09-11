@@ -350,7 +350,8 @@ namespace RimTalk.Memory
                 int joinYear = GenDate.Year(joinTick, longitude);
                 
                 // 格式化日期（例如：冬季 5日, 5500年）
-                joinDate = $"{joinQuadrum.Label()} {joinDay}日, {joinYear}年";
+                joinDate = "RimTalk_PawnStatus_JoinDateFormat"
+                    .Translate(joinQuadrum.Label(), joinDay.ToString(), joinYear.ToString()).ToString();
             }
             
             // 获取完整种族信息（种族+亚种）
@@ -364,21 +365,23 @@ namespace RimTalk.Memory
                 // < 7天：新成员描述
                 if (daysInColony == 0)
                 {
-                    baseDescription = $"{name}是殖民地的新成员，今天({joinDate})刚加入";
+                    baseDescription = "RimTalk_PawnStatus_NewMember_Today".Translate(name, joinDate).ToString();
                 }
                 else if (daysInColony == 1)
                 {
-                    baseDescription = $"{name}是殖民地的新成员，昨天({joinDate})加入";
+                    baseDescription = "RimTalk_PawnStatus_NewMember_Yesterday".Translate(name, joinDate).ToString();
                 }
                 else
                 {
-                    baseDescription = $"{name}是殖民地的新成员，{daysInColony}天前({joinDate})加入";
+                    baseDescription = "RimTalk_PawnStatus_NewMember_DaysAgo"
+                        .Translate(name, joinDate, daysInColony.ToString()).ToString();
                 }
             }
             else
             {
                 // >= 7天：资深成员描述
-                baseDescription = $"{name}是殖民地的资深成员，已加入殖民地 {daysInColony} 天（加入于{joinDate}），对殖民地的历史和成员关系较为熟悉";
+                baseDescription = "RimTalk_PawnStatus_VeteranMember"
+                    .Translate(name, joinDate, daysInColony.ToString()).ToString();
             }
             
             // 附加种族信息和提示信息
@@ -386,11 +389,11 @@ namespace RimTalk.Memory
             {
                 if (daysInColony < 7)
                 {
-                    return $"{baseDescription}。{raceInfo}。对殖民地的历史和成员关系尚不熟悉";
+                    return "RimTalk_PawnStatus_WithRace_New".Translate(baseDescription, raceInfo).ToString();
                 }
                 else
                 {
-                    return $"{baseDescription}。{raceInfo}";
+                    return "RimTalk_PawnStatus_WithRace".Translate(baseDescription, raceInfo).ToString();
                 }
             }
             else
@@ -409,6 +412,7 @@ namespace RimTalk.Memory
             
             try
             {
+                // 旧版本（硬编码中文）写入存档的格式，保留用于兼容老存档
                 // 匹配模式："今天(冬季 5日, 5500年)" 或 "加入于冬季 5日, 5500年"
                 // 使用正则表达式提取括号内的日期
                 var match = System.Text.RegularExpressions.Regex.Match(
@@ -431,6 +435,18 @@ namespace RimTalk.Memory
                 {
                     return match.Groups[1].Value;
                 }
+                
+                // 当前语言的日期格式（正则由 Keyed 翻译推导）
+                // Current language: the pattern is derived from the translated date format
+                string pattern = BuildJoinDatePattern();
+                if (!string.IsNullOrEmpty(pattern))
+                {
+                    match = System.Text.RegularExpressions.Regex.Match(content, pattern);
+                    if (match.Success)
+                    {
+                        return match.Groups[1].Value.Trim();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -439,6 +455,34 @@ namespace RimTalk.Memory
             }
             
             return null;
+        }
+        
+        /// <summary>
+        /// 把当前语言的日期格式转成正则表达式，日期必须写在括号内
+        /// Build a regex from the translated date format; the date is always wrapped in brackets
+        /// </summary>
+        private static string BuildJoinDatePattern()
+        {
+            try
+            {
+                // 用不会被翻译改写的占位符生成格式样本
+                string sample = "RimTalk_PawnStatus_JoinDateFormat"
+                    .Translate("QQZZQUADRUM", "QQZZDAY", "QQZZYEAR").ToString();
+                
+                if (string.IsNullOrEmpty(sample) || !sample.Contains("QQZZDAY"))
+                    return null;
+                
+                string body = System.Text.RegularExpressions.Regex.Escape(sample)
+                    .Replace("QQZZQUADRUM", @"[^()（）,，。]+")
+                    .Replace("QQZZDAY", @"\d{1,3}")
+                    .Replace("QQZZYEAR", @"\d{1,6}");
+                
+                return @"[(（]\s*(" + body + @")\s*[)）]";
+            }
+            catch
+            {
+                return null;
+            }
         }
         
         /// <summary>
@@ -499,17 +543,18 @@ namespace RimTalk.Memory
                     // 避免重复（如"人类-人类"）
                     if (xenotypeName.Equals(raceName, StringComparison.OrdinalIgnoreCase))
                     {
-                        return $"{pawnName}的种族是{raceName}";
+                        return "RimTalk_PawnStatus_RaceInfo".Translate(pawnName, raceName).ToString();
                     }
                     else
                     {
-                        return $"{pawnName}的种族是{raceName}-{xenotypeName}";
+                        return "RimTalk_PawnStatus_RaceInfo"
+                            .Translate(pawnName, $"{raceName}-{xenotypeName}").ToString();
                     }
                 }
                 else
                 {
                     // 只有主种族
-                    return $"{pawnName}的种族是{raceName}";
+                    return "RimTalk_PawnStatus_RaceInfo".Translate(pawnName, raceName).ToString();
                 }
             }
             catch (Exception ex)
@@ -520,9 +565,17 @@ namespace RimTalk.Memory
                     Log.Warning($"[PawnStatus] Failed to extract race info for {pawn.LabelShort}: {ex.Message}");
                 }
                 
-                return $"{pawn.LabelShort}的种族是{pawn.def?.label ?? "未知"}";
+                return "RimTalk_PawnStatus_RaceInfo".Translate(
+                    pawn.LabelShort,
+                    pawn.def?.label ?? "RimTalk_PawnStatus_UnknownRace".Translate().ToString()).ToString();
             }
         }
+        
+        // 旧版本（硬编码中文）生成的关键词，保留用于兼容老存档
+        private static readonly string[] LegacyAutoKeywords =
+        {
+            "刚加入", "新成员", "资深成员", "已加入殖民地"
+        };
         
         /// <summary>
         /// 检查内容是否为自动生成的（没有被用户编辑）
@@ -533,12 +586,16 @@ namespace RimTalk.Memory
                 return false;
             
             // 检查是否包含自动生成的关键词
-            var autoKeywords = new[] 
-            { 
-                "刚加入", "新成员", "资深成员", "已加入殖民地" 
-            };
+            if (LegacyAutoKeywords.Any(k => content.Contains(k)))
+                return true;
             
-            return autoKeywords.Any(k => content.Contains(k));
+            // 当前语言的关键词（逗号分隔）/ current language, comma separated
+            var keywords = "RimTalk_PawnStatus_AutoKeywords".Translate().ToString()
+                .Split(',')
+                .Select(k => k.Trim())
+                .Where(k => k.Length > 0);
+            
+            return keywords.Any(k => content.Contains(k));
         }
         
         /// <summary>

@@ -606,4 +606,20 @@
 合并相似经历突出长期趋势
 极简表达不超过60字
 只输出总结文字不要其他格式</RimTalk_Memory_DefaultPrompt_DeepArchive>
+  <!-- 殖民者状态常识（PawnStatusKnowledgeGenerator） -->
+  <!-- {0}=季节，{1}=日，{2}=年。日期会嵌入下面的句子，并从旧条目中反向解析 -->
+  <RimTalk_PawnStatus_JoinDateFormat>{0} {1}日, {2}年</RimTalk_PawnStatus_JoinDateFormat>
+  <!-- {0}=殖民者名字，{1}=加入日期，{2}=加入天数 -->
+  <RimTalk_PawnStatus_NewMember_Today>{0}是殖民地的新成员，今天({1})刚加入</RimTalk_PawnStatus_NewMember_Today>
+  <RimTalk_PawnStatus_NewMember_Yesterday>{0}是殖民地的新成员，昨天({1})加入</RimTalk_PawnStatus_NewMember_Yesterday>
+  <RimTalk_PawnStatus_NewMember_DaysAgo>{0}是殖民地的新成员，{2}天前({1})加入</RimTalk_PawnStatus_NewMember_DaysAgo>
+  <RimTalk_PawnStatus_VeteranMember>{0}是殖民地的资深成员，已加入殖民地 {2} 天（加入于{1}），对殖民地的历史和成员关系较为熟悉</RimTalk_PawnStatus_VeteranMember>
+  <!-- {0}=上面的句子，{1}=种族信息 -->
+  <RimTalk_PawnStatus_WithRace>{0}。{1}</RimTalk_PawnStatus_WithRace>
+  <RimTalk_PawnStatus_WithRace_New>{0}。{1}。对殖民地的历史和成员关系尚不熟悉</RimTalk_PawnStatus_WithRace_New>
+  <!-- {0}=殖民者名字，{1}=种族（或 种族-亚种） -->
+  <RimTalk_PawnStatus_RaceInfo>{0}的种族是{1}</RimTalk_PawnStatus_RaceInfo>
+  <RimTalk_PawnStatus_UnknownRace>未知</RimTalk_PawnStatus_UnknownRace>
+  <!-- 逗号分隔：用于判断条目是否自动生成（可被覆盖），必须与上面的句子一致 -->
+  <RimTalk_PawnStatus_AutoKeywords>刚加入,新成员,资深成员,已加入殖民地</RimTalk_PawnStatus_AutoKeywords>
 </LanguageData>
