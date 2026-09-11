@@ -402,16 +402,11 @@ namespace RimTalk.Memory
             if (string.IsNullOrEmpty(context))
                 return false;
 
-            // 检测是否提到过去、历史等关键词
-            string[] archiveKeywords = { "过去", "以前", "曾经", "记得", "回忆", "历史", "当时", "那时候" };
-
-            foreach (var keyword in archiveKeywords)
-            {
-                if (context.Contains(keyword))
-                    return true;
-            }
-
-            return false;
+            // 检测是否提到过去、历史等关键词（中文 + 当前语言）
+            return KeywordVocabulary.ContainsAny(
+                context,
+                new[] { "过去", "以前", "曾经", "记得", "回忆", "历史", "当时", "那时候" },
+                "RimTalk_Scene_HistoryRecall_Keywords");
         }
 
         /// <summary>

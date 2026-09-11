@@ -291,20 +291,20 @@ namespace RimTalk.Memory
         }
         
         /// <summary>
-        /// 获取场景的中文显示名称
+        /// 获取场景的显示名称 / scene display name
         /// </summary>
         public static string GetSceneDisplayName(SceneType scene)
         {
             switch (scene)
             {
-                case SceneType.Combat: return "战斗/紧急";
-                case SceneType.Social: return "社交/情感";
-                case SceneType.Work: return "工作/日常";
-                case SceneType.Medical: return "医疗/健康";
-                case SceneType.Research: return "研究/学习";
-                case SceneType.Event: return "特殊事件";
-                case SceneType.Neutral: return "中性/通用";
-                default: return "未知";
+                case SceneType.Combat: return "RimTalk_SceneType_Combat".Translate();
+                case SceneType.Social: return "RimTalk_SceneType_Social".Translate();
+                case SceneType.Work: return "RimTalk_SceneType_Work".Translate();
+                case SceneType.Medical: return "RimTalk_SceneType_Medical".Translate();
+                case SceneType.Research: return "RimTalk_SceneType_Research".Translate();
+                case SceneType.Event: return "RimTalk_SceneType_Event".Translate();
+                case SceneType.Neutral: return "RimTalk_SceneType_Neutral".Translate();
+                default: return "RimTalk_SceneType_Unknown".Translate();
             }
         }
     }
@@ -320,7 +320,8 @@ namespace RimTalk.Memory
         
         public override string ToString()
         {
-            return $"{SceneAnalyzer.GetSceneDisplayName(PrimaryScene)} (置信度: {Confidence:P0})";
+            return "RimTalk_SceneType_WithConfidence".Translate(
+                SceneAnalyzer.GetSceneDisplayName(PrimaryScene), Confidence.ToString("P0")).ToString();
         }
     }
     

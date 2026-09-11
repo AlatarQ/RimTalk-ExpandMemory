@@ -150,7 +150,7 @@ public class MemorySummarizer
 
         if (targetMemories.Count == 0)
         {
-            Messages.Message("无可总结条目", MessageTypeDefOf.RejectInput, historical: false);
+            Messages.Message("RimTalk_Memory_NothingToSummarize".Translate(), MessageTypeDefOf.RejectInput, historical: false);
             return;
         }
 
@@ -261,7 +261,7 @@ public class MemorySummarizer
         {
             // 仅手动归档时才会显示提示信息，自动归档静默失败
             if (source is not null)
-                Messages.Message("无可归档条目", MessageTypeDefOf.RejectInput, historical: false);
+                Messages.Message("RimTalk_Memory_NothingToArchive".Translate(), MessageTypeDefOf.RejectInput, historical: false);
 
             return;
         }

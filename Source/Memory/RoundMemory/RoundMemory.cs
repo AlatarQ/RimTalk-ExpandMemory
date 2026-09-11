@@ -51,7 +51,8 @@ public class RoundMemory : MemoryEntry, IExposable
         IsHomeMap = Pawns.Select(p => p.Map).FirstOrDefault(m => m is not null)?.IsPlayerHome ?? false;
 
         // 显式显示参与者名单（可选：并在构建时就初始化内容）
-        Content = $"[对话参与者: {GetParticipantsRoster()}]{(content is null ? string.Empty : $"\n{content}")}";
+        Content = "RimTalk_RoundMemory_Participants".Translate(GetParticipantsRoster()).ToString()
+            + (content is null ? string.Empty : $"\n{content}");
     }
 
     /// <summary>

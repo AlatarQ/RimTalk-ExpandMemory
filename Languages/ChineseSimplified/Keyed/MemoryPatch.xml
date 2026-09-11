@@ -753,4 +753,20 @@
 
   <!-- 情感词：先在对话里查找，再到情感记忆里查找 -->
   <RimTalk_Emotion_Keywords>开心 高兴 快乐 愉快 难过 悲伤 伤心 痛苦 愤怒 生气 恼火 讨厌 害怕 恐惧 担心 焦虑</RimTalk_Emotion_Keywords>
+  <!-- 场景分析（SceneAnalyzer），用于开发日志和调试输出 -->
+  <RimTalk_SceneType_Combat>战斗/紧急</RimTalk_SceneType_Combat>
+  <RimTalk_SceneType_Social>社交/情感</RimTalk_SceneType_Social>
+  <RimTalk_SceneType_Work>工作/日常</RimTalk_SceneType_Work>
+  <RimTalk_SceneType_Medical>医疗/健康</RimTalk_SceneType_Medical>
+  <RimTalk_SceneType_Research>研究/学习</RimTalk_SceneType_Research>
+  <RimTalk_SceneType_Event>特殊事件</RimTalk_SceneType_Event>
+  <RimTalk_SceneType_Neutral>中性/通用</RimTalk_SceneType_Neutral>
+  <RimTalk_SceneType_Unknown>未知</RimTalk_SceneType_Unknown>
+  <!-- {0}=场景名称，{1}=置信度百分比 -->
+  <RimTalk_SceneType_WithConfidence>{0} (置信度: {1})</RimTalk_SceneType_WithConfidence>
+
+  <RimTalk_Memory_NothingToSummarize>无可总结条目</RimTalk_Memory_NothingToSummarize>
+  <RimTalk_Memory_NothingToArchive>无可归档条目</RimTalk_Memory_NothingToArchive>
+  <!-- {0}=对话参与者名单，这段文字会进入 AI 读取的记忆 -->
+  <RimTalk_RoundMemory_Participants>[对话参与者: {0}]</RimTalk_RoundMemory_Participants>
 </LanguageData>

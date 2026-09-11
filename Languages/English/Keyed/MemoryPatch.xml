@@ -756,4 +756,20 @@ Output only the summary text, no other formatting</RimTalk_Memory_DefaultPrompt_
 
   <!-- Emotion words looked for in the conversation and then in emotional memories -->
   <RimTalk_Emotion_Keywords>happy glad joyful cheerful sad sorrow unhappy miserable angry furious annoyed hateful afraid scared worried anxious</RimTalk_Emotion_Keywords>
+  <!-- Scene analysis (SceneAnalyzer), shown in the dev log and in debug output -->
+  <RimTalk_SceneType_Combat>Combat / emergency</RimTalk_SceneType_Combat>
+  <RimTalk_SceneType_Social>Social / emotional</RimTalk_SceneType_Social>
+  <RimTalk_SceneType_Work>Work / everyday</RimTalk_SceneType_Work>
+  <RimTalk_SceneType_Medical>Medical / health</RimTalk_SceneType_Medical>
+  <RimTalk_SceneType_Research>Research / learning</RimTalk_SceneType_Research>
+  <RimTalk_SceneType_Event>Special event</RimTalk_SceneType_Event>
+  <RimTalk_SceneType_Neutral>Neutral / general</RimTalk_SceneType_Neutral>
+  <RimTalk_SceneType_Unknown>Unknown</RimTalk_SceneType_Unknown>
+  <!-- {0} = scene name, {1} = confidence in percent -->
+  <RimTalk_SceneType_WithConfidence>{0} (confidence: {1})</RimTalk_SceneType_WithConfidence>
+
+  <RimTalk_Memory_NothingToSummarize>Nothing to summarize</RimTalk_Memory_NothingToSummarize>
+  <RimTalk_Memory_NothingToArchive>Nothing to archive</RimTalk_Memory_NothingToArchive>
+  <!-- {0} = the list of pawns taking part in the conversation. This goes into the memory the AI reads. -->
+  <RimTalk_RoundMemory_Participants>[participants: {0}]</RimTalk_RoundMemory_Participants>
 </LanguageData>
