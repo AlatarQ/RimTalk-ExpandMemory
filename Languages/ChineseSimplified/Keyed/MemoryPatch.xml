@@ -101,6 +101,12 @@
   <RimTalk_Filter_All>全部</RimTalk_Filter_All>
   <RimTalk_Filter_Conversation>对话</RimTalk_Filter_Conversation>
   <RimTalk_Filter_Action>行动</RimTalk_Filter_Action>
+  <RimTalk_Filter_Summarization>总结</RimTalk_Filter_Summarization>
+  <RimTalk_Filter_Event>事件</RimTalk_Filter_Event>
+  <RimTalk_Filter_Emotion>情绪</RimTalk_Filter_Emotion>
+  <RimTalk_Filter_Relationship>关系</RimTalk_Filter_Relationship>
+  <RimTalk_Filter_Interaction>互动</RimTalk_Filter_Interaction>
+  <RimTalk_Filter_Internal>内部上下文</RimTalk_Filter_Internal>
   
   <RimTalk_Tooltip_Preview>查看注入预览</RimTalk_Tooltip_Preview>
   <RimTalk_Tooltip_Knowledge>管理常识库</RimTalk_Tooltip_Knowledge>
@@ -128,6 +134,12 @@
   <RimTalk_With>与</RimTalk_With>
   <RimTalk_MemoryType_Conversation>对话</RimTalk_MemoryType_Conversation>
   <RimTalk_MemoryType_Action>行动</RimTalk_MemoryType_Action>
+  <RimTalk_MemoryType_Summarization>总结</RimTalk_MemoryType_Summarization>
+  <RimTalk_MemoryType_Event>事件</RimTalk_MemoryType_Event>
+  <RimTalk_MemoryType_Emotion>情绪</RimTalk_MemoryType_Emotion>
+  <RimTalk_MemoryType_Relationship>关系</RimTalk_MemoryType_Relationship>
+  <RimTalk_MemoryType_Interaction>互动</RimTalk_MemoryType_Interaction>
+  <RimTalk_MemoryType_Internal>内部上下文</RimTalk_MemoryType_Internal>
   
   <RimTalk_Settings_MustEnterGame>必须先进入游戏</RimTalk_Settings_MustEnterGame>
   <RimTalk_Settings_CannotFindManager>找不到记忆管理器</RimTalk_Settings_CannotFindManager>

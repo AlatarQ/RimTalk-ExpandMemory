@@ -100,6 +100,12 @@
   <RimTalk_Filter_All>All</RimTalk_Filter_All>
   <RimTalk_Filter_Conversation>Conversation</RimTalk_Filter_Conversation>
   <RimTalk_Filter_Action>Action</RimTalk_Filter_Action>
+  <RimTalk_Filter_Summarization>Summary</RimTalk_Filter_Summarization>
+  <RimTalk_Filter_Event>Event</RimTalk_Filter_Event>
+  <RimTalk_Filter_Emotion>Emotion</RimTalk_Filter_Emotion>
+  <RimTalk_Filter_Relationship>Relationship</RimTalk_Filter_Relationship>
+  <RimTalk_Filter_Interaction>Interaction</RimTalk_Filter_Interaction>
+  <RimTalk_Filter_Internal>Internal</RimTalk_Filter_Internal>
   
   <RimTalk_UI_Preview>Preview</RimTalk_UI_Preview>
   <RimTalk_UI_Knowledge>Knowledge</RimTalk_UI_Knowledge>
@@ -132,6 +138,12 @@
   <RimTalk_With>with</RimTalk_With>
   <RimTalk_MemoryType_Conversation>Conversation</RimTalk_MemoryType_Conversation>
   <RimTalk_MemoryType_Action>Action</RimTalk_MemoryType_Action>
+  <RimTalk_MemoryType_Summarization>Summary</RimTalk_MemoryType_Summarization>
+  <RimTalk_MemoryType_Event>Event</RimTalk_MemoryType_Event>
+  <RimTalk_MemoryType_Emotion>Emotion</RimTalk_MemoryType_Emotion>
+  <RimTalk_MemoryType_Relationship>Relationship</RimTalk_MemoryType_Relationship>
+  <RimTalk_MemoryType_Interaction>Interaction</RimTalk_MemoryType_Interaction>
+  <RimTalk_MemoryType_Internal>Internal</RimTalk_MemoryType_Internal>
   
   <RimTalk_Menu_MemoryCompUnavailable>Memory component unavailable</RimTalk_Menu_MemoryCompUnavailable>
   <RimTalk_Menu_CreateMemoryFailed>Failed to create memory</RimTalk_Menu_CreateMemoryFailed>
