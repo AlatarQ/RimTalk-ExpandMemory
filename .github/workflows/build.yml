@@ -1,0 +1,63 @@
+name: Build DLL
+
+# Builds RimTalkMemoryPatch.dll on GitHub's runners, so no local .NET SDK is needed.
+# RimTalk.dll is compiled from the official source (jlibrary/RimTalk) at the same
+# version as the one installed from the Workshop, so the references match.
+
+on:
+  push:
+    branches: [ ci-build ]
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GAME_VERSION: "1.6"
+  RIMTALK_REF: v1.2.9
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      # Keep LF endings: multi-line string literals in the source must match the original DLL
+      - name: Disable CRLF conversion
+        run: git config --global core.autocrlf false
+
+      - name: Checkout Expand Memory
+        uses: actions/checkout@v4
+        with:
+          path: em
+
+      - name: Checkout RimTalk (${{ env.RIMTALK_REF }})
+        uses: actions/checkout@v4
+        with:
+          repository: jlibrary/RimTalk
+          ref: ${{ env.RIMTALK_REF }}
+          path: rimtalk
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Build RimTalk
+        run: dotnet build rimtalk/RimTalk.csproj -c Release -p:GameVersion=${{ env.GAME_VERSION }} -nologo -v minimal
+
+      - name: Build Expand Memory
+        shell: pwsh
+        run: |
+          $rt = Join-Path $env:GITHUB_WORKSPACE 'rimtalk'
+          if (-not (Test-Path "$rt\${{ env.GAME_VERSION }}\Assemblies\RimTalk.dll")) { throw "RimTalk.dll not built" }
+          dotnet build em/RimTalk-ExpandMemory.csproj -c Release -p:GameVersion=${{ env.GAME_VERSION }} -p:RimTalkDir="$rt" -nologo -v minimal
+          Get-Item em/${{ env.GAME_VERSION }}/Assemblies/RimTalkMemoryPatch.dll | Format-List Name,Length,LastWriteTime
+
+      - name: Upload DLL
+        uses: actions/upload-artifact@v4
+        with:
+          name: RimTalkMemoryPatch-${{ env.GAME_VERSION }}-${{ github.sha }}
+          path: |
+            em/${{ env.GAME_VERSION }}/Assemblies/RimTalkMemoryPatch.dll
+            em/${{ env.GAME_VERSION }}/Assemblies/RimTalkMemoryPatch.pdb
+          if-no-files-found: error
