@@ -3,7 +3,11 @@
   <!-- Memory Management Main Tab -->
   <MainButtonDef>
     <defName>RimTalk_Memory</defName>
-    <!-- label 和 description 由 Languages/*/DefInjected/MainButtonDef/RimTalk_Memory.xml 提供 -->
+    <!-- label 和 description 写在这里作为默认值（英文）；
+         各语言用 Languages/*/DefInjected/MainButtonDef/RimTalk_Memory.xml 覆盖，
+         缺少该文件的语言会回落到这里，而不是显示空标签 -->
+    <label>memory</label>
+    <description>View interaction and action memories (conversation requires RimTalk integration, observation not yet implemented).</description>
     <tabWindowClass>RimTalk.Memory.UI.MainTabWindow_Memory, RimTalkMemoryPatch</tabWindowClass>
     <order>35</order>
   </MainButtonDef>
