@@ -144,7 +144,7 @@ namespace RimTalk.Memory.UI
 
                     // 标签名称
                     Rect labelRect = new Rect(tagRect.x + 5f, tagRect.y, tagRect.width - 70f, tagRect.height);
-                    Widgets.Label(labelRect, $"✓ {tag}");
+                    Widgets.Label(labelRect, $"✓ {MemoryEntry.GetTagDisplayLabel(tag)}");
 
                     // 移除按钮
                     Rect removeRect = new Rect(tagRect.xMax - 60f, tagRect.y, 55f, 22f);
@@ -172,7 +172,7 @@ namespace RimTalk.Memory.UI
                 // 标签名称
                 Rect labelRect = new Rect(tagRect.x + 5f, tagRect.y, tagRect.width - 70f, tagRect.height);
                 GUI.color = Color.gray;
-                Widgets.Label(labelRect, tag);
+                Widgets.Label(labelRect, MemoryEntry.GetTagDisplayLabel(tag));
                 GUI.color = Color.white;
 
                 // 添加按钮

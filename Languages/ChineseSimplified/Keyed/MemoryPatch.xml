@@ -140,6 +140,33 @@
   <RimTalk_MemoryType_Relationship>关系</RimTalk_MemoryType_Relationship>
   <RimTalk_MemoryType_Interaction>互动</RimTalk_MemoryType_Interaction>
   <RimTalk_MemoryType_Internal>内部上下文</RimTalk_MemoryType_Internal>
+
+  <!-- 记忆标签。标签本身以中文原样存进存档，这里只是显示文本，
+       见 MemoryEntry.GetTagDisplayLabel -->
+  <RimTalk_MemoryTag_Happy>开心</RimTalk_MemoryTag_Happy>
+  <RimTalk_MemoryTag_Sad>悲伤</RimTalk_MemoryTag_Sad>
+  <RimTalk_MemoryTag_Angry>愤怒</RimTalk_MemoryTag_Angry>
+  <RimTalk_MemoryTag_Anxious>焦虑</RimTalk_MemoryTag_Anxious>
+  <RimTalk_MemoryTag_Calm>平静</RimTalk_MemoryTag_Calm>
+  <RimTalk_MemoryTag_Combat>战斗</RimTalk_MemoryTag_Combat>
+  <RimTalk_MemoryTag_Raid>袭击</RimTalk_MemoryTag_Raid>
+  <RimTalk_MemoryTag_Injured>受伤</RimTalk_MemoryTag_Injured>
+  <RimTalk_MemoryTag_Death>死亡</RimTalk_MemoryTag_Death>
+  <RimTalk_MemoryTag_TaskComplete>完成任务</RimTalk_MemoryTag_TaskComplete>
+  <RimTalk_MemoryTag_SmallTalk>闲聊</RimTalk_MemoryTag_SmallTalk>
+  <RimTalk_MemoryTag_DeepTalk>深谈</RimTalk_MemoryTag_DeepTalk>
+  <RimTalk_MemoryTag_Argument>争吵</RimTalk_MemoryTag_Argument>
+  <RimTalk_MemoryTag_Friendly>友好</RimTalk_MemoryTag_Friendly>
+  <RimTalk_MemoryTag_Hostile>敌对</RimTalk_MemoryTag_Hostile>
+  <RimTalk_MemoryTag_Cooking>烹饪</RimTalk_MemoryTag_Cooking>
+  <RimTalk_MemoryTag_Construction>建造</RimTalk_MemoryTag_Construction>
+  <RimTalk_MemoryTag_Growing>种植</RimTalk_MemoryTag_Growing>
+  <RimTalk_MemoryTag_Mining>采矿</RimTalk_MemoryTag_Mining>
+  <RimTalk_MemoryTag_Research>研究</RimTalk_MemoryTag_Research>
+  <RimTalk_MemoryTag_Medical>医疗</RimTalk_MemoryTag_Medical>
+  <RimTalk_MemoryTag_Important>重要</RimTalk_MemoryTag_Important>
+  <RimTalk_MemoryTag_Urgent>紧急</RimTalk_MemoryTag_Urgent>
+  <RimTalk_MemoryTag_UserEdited>用户编辑</RimTalk_MemoryTag_UserEdited>
   
   <RimTalk_Settings_MustEnterGame>必须先进入游戏</RimTalk_Settings_MustEnterGame>
   <RimTalk_Settings_CannotFindManager>找不到记忆管理器</RimTalk_Settings_CannotFindManager>

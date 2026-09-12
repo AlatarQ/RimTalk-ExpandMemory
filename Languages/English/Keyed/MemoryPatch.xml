@@ -144,6 +144,33 @@
   <RimTalk_MemoryType_Relationship>Relationship</RimTalk_MemoryType_Relationship>
   <RimTalk_MemoryType_Interaction>Interaction</RimTalk_MemoryType_Interaction>
   <RimTalk_MemoryType_Internal>Internal</RimTalk_MemoryType_Internal>
+
+  <!-- Memory tags. The tag itself is stored in the save as the original Chinese;
+       these are display labels only, see MemoryEntry.GetTagDisplayLabel -->
+  <RimTalk_MemoryTag_Happy>Happy</RimTalk_MemoryTag_Happy>
+  <RimTalk_MemoryTag_Sad>Sad</RimTalk_MemoryTag_Sad>
+  <RimTalk_MemoryTag_Angry>Angry</RimTalk_MemoryTag_Angry>
+  <RimTalk_MemoryTag_Anxious>Anxious</RimTalk_MemoryTag_Anxious>
+  <RimTalk_MemoryTag_Calm>Calm</RimTalk_MemoryTag_Calm>
+  <RimTalk_MemoryTag_Combat>Combat</RimTalk_MemoryTag_Combat>
+  <RimTalk_MemoryTag_Raid>Raid</RimTalk_MemoryTag_Raid>
+  <RimTalk_MemoryTag_Injured>Injured</RimTalk_MemoryTag_Injured>
+  <RimTalk_MemoryTag_Death>Death</RimTalk_MemoryTag_Death>
+  <RimTalk_MemoryTag_TaskComplete>Task complete</RimTalk_MemoryTag_TaskComplete>
+  <RimTalk_MemoryTag_SmallTalk>Small talk</RimTalk_MemoryTag_SmallTalk>
+  <RimTalk_MemoryTag_DeepTalk>Deep talk</RimTalk_MemoryTag_DeepTalk>
+  <RimTalk_MemoryTag_Argument>Argument</RimTalk_MemoryTag_Argument>
+  <RimTalk_MemoryTag_Friendly>Friendly</RimTalk_MemoryTag_Friendly>
+  <RimTalk_MemoryTag_Hostile>Hostile</RimTalk_MemoryTag_Hostile>
+  <RimTalk_MemoryTag_Cooking>Cooking</RimTalk_MemoryTag_Cooking>
+  <RimTalk_MemoryTag_Construction>Construction</RimTalk_MemoryTag_Construction>
+  <RimTalk_MemoryTag_Growing>Growing</RimTalk_MemoryTag_Growing>
+  <RimTalk_MemoryTag_Mining>Mining</RimTalk_MemoryTag_Mining>
+  <RimTalk_MemoryTag_Research>Research</RimTalk_MemoryTag_Research>
+  <RimTalk_MemoryTag_Medical>Medical</RimTalk_MemoryTag_Medical>
+  <RimTalk_MemoryTag_Important>Important</RimTalk_MemoryTag_Important>
+  <RimTalk_MemoryTag_Urgent>Urgent</RimTalk_MemoryTag_Urgent>
+  <RimTalk_MemoryTag_UserEdited>User edited</RimTalk_MemoryTag_UserEdited>
   
   <RimTalk_Menu_MemoryCompUnavailable>Memory component unavailable</RimTalk_Menu_MemoryCompUnavailable>
   <RimTalk_Menu_CreateMemoryFailed>Failed to create memory</RimTalk_Menu_CreateMemoryFailed>

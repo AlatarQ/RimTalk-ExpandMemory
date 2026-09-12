@@ -243,6 +243,56 @@ public class MemoryEntry : IExposable
         });
     }
 
+    // 标签 -> 显示用翻译键。前半段必须与 AddTypeTag 中的字面量保持一致，
+    // 后半段对应 MemoryTags 中的常用标签。
+    // 标签本身是存档内的匹配数据，永远保持中文原样，只有界面文本走翻译。
+    // Display labels only; the stored tag itself never changes.
+    private static readonly Dictionary<string, string> TagLabelKeys = new()
+    {
+        // 类型标签，由 AddTypeTag 自动添加
+        { "对话", "RimTalk_MemoryType_Conversation" },
+        { "行动", "RimTalk_MemoryType_Action" },
+        { "总结", "RimTalk_MemoryType_Summarization" },
+        { "事件", "RimTalk_MemoryType_Event" },
+        { "情绪", "RimTalk_MemoryType_Emotion" },
+        { "关系", "RimTalk_MemoryType_Relationship" },
+        { "内部上下文", "RimTalk_MemoryType_Internal" },
+
+        // 常用标签，见 MemoryTags
+        { MemoryTags.开心, "RimTalk_MemoryTag_Happy" },
+        { MemoryTags.悲伤, "RimTalk_MemoryTag_Sad" },
+        { MemoryTags.愤怒, "RimTalk_MemoryTag_Angry" },
+        { MemoryTags.焦虑, "RimTalk_MemoryTag_Anxious" },
+        { MemoryTags.平静, "RimTalk_MemoryTag_Calm" },
+        { MemoryTags.战斗, "RimTalk_MemoryTag_Combat" },
+        { MemoryTags.袭击, "RimTalk_MemoryTag_Raid" },
+        { MemoryTags.受伤, "RimTalk_MemoryTag_Injured" },
+        { MemoryTags.死亡, "RimTalk_MemoryTag_Death" },
+        { MemoryTags.完成任务, "RimTalk_MemoryTag_TaskComplete" },
+        { MemoryTags.闲聊, "RimTalk_MemoryTag_SmallTalk" },
+        { MemoryTags.深谈, "RimTalk_MemoryTag_DeepTalk" },
+        { MemoryTags.争吵, "RimTalk_MemoryTag_Argument" },
+        { MemoryTags.友好, "RimTalk_MemoryTag_Friendly" },
+        { MemoryTags.敌对, "RimTalk_MemoryTag_Hostile" },
+        { MemoryTags.烹饪, "RimTalk_MemoryTag_Cooking" },
+        { MemoryTags.建造, "RimTalk_MemoryTag_Construction" },
+        { MemoryTags.种植, "RimTalk_MemoryTag_Growing" },
+        { MemoryTags.采矿, "RimTalk_MemoryTag_Mining" },
+        { MemoryTags.研究, "RimTalk_MemoryTag_Research" },
+        { MemoryTags.医疗, "RimTalk_MemoryTag_Medical" },
+        { MemoryTags.重要, "RimTalk_MemoryTag_Important" },
+        { MemoryTags.紧急, "RimTalk_MemoryTag_Urgent" },
+        { MemoryTags.用户编辑, "RimTalk_MemoryTag_UserEdited" },
+    };
+
+    /// <summary>
+    /// 取标签的显示文本：已知标签走翻译，用户自定义标签原样返回
+    /// </summary>
+    public static string GetTagDisplayLabel(string tag) =>
+        tag is not null && TagLabelKeys.TryGetValue(tag, out var key)
+            ? key.Translate().ToString()
+            : tag;
+
     /// <summary>
     /// 添加标签（中文）
     /// </summary>
