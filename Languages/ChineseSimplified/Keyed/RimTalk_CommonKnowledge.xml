@@ -30,7 +30,6 @@
     <RimTalk_Knowledge_Tag>标签:</RimTalk_Knowledge_Tag>
     <RimTalk_Knowledge_Importance>重要性:</RimTalk_Knowledge_Importance>
     <RimTalk_Knowledge_Status>状态:</RimTalk_Knowledge_Status>
-    <RimTalk_Knowledge_Enabled>启用</RimTalk_Knowledge_Enabled>
     <RimTalk_Knowledge_Disabled>禁用</RimTalk_Knowledge_Disabled>
     <RimTalk_Knowledge_Keywords>关键词:</RimTalk_Knowledge_Keywords>
     <RimTalk_Knowledge_Content>内容:</RimTalk_Knowledge_Content>
@@ -45,8 +44,6 @@
     <RimTalk_Knowledge_SaveSuccess>保存成功</RimTalk_Knowledge_SaveSuccess>
     
     <!-- Confirmations 确认对话框 -->
-    <RimTalk_Knowledge_DeleteConfirm>确定要删除这条常识吗？</RimTalk_Knowledge_DeleteConfirm>
-    <RimTalk_Knowledge_Deleted>已删除</RimTalk_Knowledge_Deleted>
     <RimTalk_Knowledge_ClearAllConfirm>确定要清空所有 {0} 条常识吗？此操作不可撤销！</RimTalk_Knowledge_ClearAllConfirm>
     <RimTalk_Knowledge_Cleared>已清空常识库</RimTalk_Knowledge_Cleared>
     
@@ -144,14 +141,14 @@
     <RimTalk_Knowledge_ExclusiveTo>专属于 {0}</RimTalk_Knowledge_ExclusiveTo>
     <RimTalk_Knowledge_VisibilityGlobal>全局（所有角色）</RimTalk_Knowledge_VisibilityGlobal>
     <RimTalk_Knowledge_VisibilityExclusive>专属于 {0}</RimTalk_Knowledge_VisibilityExclusive>
-    <RimTalk_Knowledge_VisibilityDeleted>（角色已删除）</RimTalk_Knowledge_VisibilityDeleted>
+    <RimTalk_Knowledge_VisibilityDeleted>角色 #{0}（已删除）</RimTalk_Knowledge_VisibilityDeleted>
     
     <RimTalk_Knowledge_DeleteConfirm>确定要删除这 {0} 条常识吗？</RimTalk_Knowledge_DeleteConfirm>
     <RimTalk_Knowledge_Deleted>已删除 {0} 条常识</RimTalk_Knowledge_Deleted>
     <RimTalk_Knowledge_ClearConfirm>确定要清空所有常识吗？此操作不可撤销！</RimTalk_Knowledge_ClearConfirm>
     <RimTalk_Knowledge_AllCleared>已清空常识库</RimTalk_Knowledge_AllCleared>
     
-    <RimTalk_Knowledge_ImportDescription>请粘贴常识文本（格式：[标签]内容，每行一条）</RimTalk_Knowledge_ImportDescription>
+    <RimTalk_Knowledge_ImportDescription>粘贴常识条目，格式：[标签|重要性]内容</RimTalk_Knowledge_ImportDescription>
     <RimTalk_Knowledge_Imported>已导入 {0} 条常识</RimTalk_Knowledge_Imported>
     <RimTalk_Knowledge_ExportedToClipboard>已导出 {0} 条常识到剪贴板</RimTalk_Knowledge_ExportedToClipboard>
     

@@ -306,32 +306,4 @@
     <RimTalk_UI_MemoryArchived>{0}'s mid-term memories have been archived to long-term memory</RimTalk_UI_MemoryArchived>
     <RimTalk_UI_MemoriesArchivedCount>Memories archived for {0} colonists</RimTalk_UI_MemoriesArchivedCount>
     
-    <!-- Knowledge Library Management UI -->
-    <RimTalk_Knowledge_New>New</RimTalk_Knowledge_New>
-    <RimTalk_Knowledge_Import>Import</RimTalk_Knowledge_Import>
-    <RimTalk_Knowledge_Export>Export</RimTalk_Knowledge_Export>
-    <RimTalk_Knowledge_Delete>Delete</RimTalk_Knowledge_Delete>
-    <RimTalk_Knowledge_ClearAll>Clear All</RimTalk_Knowledge_ClearAll>
-    
-    <RimTalk_Knowledge_TotalAndEnabled>Total: {0} | Enabled: {1}</RimTalk_Knowledge_TotalAndEnabled>
-    
-    <!-- Auto Generate Section -->
-    <RimTalk_Knowledge_AutoGenerate>Auto Generate Knowledge</RimTalk_Knowledge_AutoGenerate>
-    <RimTalk_Knowledge_PawnStatus>Colonist Status Knowledge</RimTalk_Knowledge_PawnStatus>
-    <RimTalk_Knowledge_PawnStatusDesc>Auto-update colonist status daily (join time, relationships, etc.)</RimTalk_Knowledge_PawnStatusDesc>
-    <RimTalk_Knowledge_EventRecord>Event Record Knowledge</RimTalk_Knowledge_EventRecord>
-    <RimTalk_Knowledge_EventRecordDesc>Extract major events daily from game log (death, marriage, join, construction, etc.)</RimTalk_Knowledge_EventRecordDesc>
-    <RimTalk_Knowledge_GenerateNow>Generate Now (Manual)</RimTalk_Knowledge_GenerateNow>
-    <RimTalk_Knowledge_GenerateNowDesc>Generate all enabled knowledge types immediately</RimTalk_Knowledge_GenerateNowDesc>
-    <RimTalk_Knowledge_EnableAtLeastOne>Please enable at least one knowledge generation type</RimTalk_Knowledge_EnableAtLeastOne>
-    <RimTalk_Knowledge_MustEnterGame>Must enter game first</RimTalk_Knowledge_MustEnterGame>
-    <RimTalk_Knowledge_GeneratedCount>Generated {0} colonist status knowledge entries</RimTalk_Knowledge_GeneratedCount>
-    <RimTalk_Knowledge_AllExist>All colonist status knowledge already exists, no need to generate</RimTalk_Knowledge_AllExist>
-    <RimTalk_Knowledge_EventGeneratedCount>Generated {0} event record knowledge entries</RimTalk_Knowledge_EventGeneratedCount>
-    <RimTalk_Knowledge_NoNewEvents>No new major events found, or all events already recorded</RimTalk_Knowledge_NoNewEvents>
-    <RimTalk_Knowledge_EventGenerateFailed>Event record generation failed: {0}</RimTalk_Knowledge_EventGenerateFailed>
-    <RimTalk_Knowledge_Confirm>Confirm</RimTalk_Knowledge_Confirm>
-    
-    <RimTalk_Knowledge_Tag>Tag:</RimTalk_Knowledge_Tag>
-
 </LanguageData>

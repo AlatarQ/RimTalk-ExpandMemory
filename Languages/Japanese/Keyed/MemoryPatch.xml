@@ -3,14 +3,8 @@
     <!-- RimTalk Memory Patch - �ձ��Z���U -->
     
     <!-- Filter Buttons -->
-    <RimTalk_Filter_All>���٤�</RimTalk_Filter_All>
-    <RimTalk_Filter_Conversation>��Ԓ</RimTalk_Filter_Conversation>
     <RimTalk_Filter_Interaction>����</RimTalk_Filter_Interaction>
-    <RimTalk_Filter_Action>�Є�</RimTalk_Filter_Action>
     <RimTalk_Filter_Observation>�Q��</RimTalk_Filter_Observation>
-    <RimTalk_Filter_Event>���٥��</RimTalk_Filter_Event>
-    <RimTalk_Filter_Emotion>����</RimTalk_Filter_Emotion>
-    <RimTalk_Filter_Relationship>�v�S</RimTalk_Filter_Relationship>
     
     <!-- Memory Stats -->
     <RimTalk_MemoryStats>����ӛ��: {0}/{1} | �L��ӛ��: {2}/{3}</RimTalk_MemoryStats>
@@ -23,12 +17,6 @@
     <RimTalk_EventLogSummary>���٥�ȥ��Ҫ�s</RimTalk_EventLogSummary>
     <RimTalk_ArchiveMemory>�R�s�L�ڥڥ륽�ʥ��`������</RimTalk_ArchiveMemory>
     
-    <!-- Colonist Selection -->
-    <RimTalk_SelectColonist>��ֲ�ߤ��x�k</RimTalk_SelectColonist>
-    <RimTalk_ChooseColonist>�x�k...</RimTalk_ChooseColonist>
-    <RimTalk_NoColonists>��ֲ�ߤʤ�</RimTalk_NoColonists>
-    <RimTalk_NoMemoryComponent>������ֲ�ߤˤ�ӛ������ݩ`�ͥ�Ȥ�����ޤ���</RimTalk_NoMemoryComponent>
-    
     <!-- Time Display -->
     <RimTalk_JustNow>���ä���</RimTalk_JustNow>
     <RimTalk_MinutesAgo>{0}��ǰ</RimTalk_MinutesAgo>
@@ -36,13 +24,8 @@
     <RimTalk_DaysAgo>{0}��ǰ</RimTalk_DaysAgo>
     
     <!-- Memory Types -->
-    <RimTalk_MemoryType_Conversation>��Ԓ</RimTalk_MemoryType_Conversation>
     <RimTalk_MemoryType_Interaction>����</RimTalk_MemoryType_Interaction>
-    <RimTalk_MemoryType_Action>�Є�</RimTalk_MemoryType_Action>
     <RimTalk_MemoryType_Observation>�Q��</RimTalk_MemoryType_Observation>
-    <RimTalk_MemoryType_Event>���٥��</RimTalk_MemoryType_Event>
-    <RimTalk_MemoryType_Emotion>����</RimTalk_MemoryType_Emotion>
-    <RimTalk_MemoryType_Relationship>�v�S</RimTalk_MemoryType_Relationship>
     
     <!-- Memory Tab -->
     <RimTalk_TabMemory>ӛ��</RimTalk_TabMemory>
@@ -109,6 +92,5 @@
     <RimTalk_ConfirmClearLongTerm>�L��ӛ���򥯥ꥢ���Ƥ�������Ǥ�����</RimTalk_ConfirmClearLongTerm>
     
     <!-- Other -->
-    <RimTalk_With>��</RimTalk_With>
     <RimTalk_ObservationPlaceholder>���Q��ӛ���Υץ�`���ۥ���` - δ�gװ��</RimTalk_ObservationPlaceholder>
 </LanguageData>

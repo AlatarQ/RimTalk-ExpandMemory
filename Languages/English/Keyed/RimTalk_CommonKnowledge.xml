@@ -30,7 +30,6 @@
     <RimTalk_Knowledge_Tag>Tag:</RimTalk_Knowledge_Tag>
     <RimTalk_Knowledge_Importance>Importance:</RimTalk_Knowledge_Importance>
     <RimTalk_Knowledge_Status>Status:</RimTalk_Knowledge_Status>
-    <RimTalk_Knowledge_Enabled>Enabled</RimTalk_Knowledge_Enabled>
     <RimTalk_Knowledge_Disabled>Disabled</RimTalk_Knowledge_Disabled>
     <RimTalk_Knowledge_Keywords>Keywords:</RimTalk_Knowledge_Keywords>
     <RimTalk_Knowledge_Content>Content:</RimTalk_Knowledge_Content>
@@ -45,8 +44,6 @@
     <RimTalk_Knowledge_SaveSuccess>Saved successfully</RimTalk_Knowledge_SaveSuccess>
     
     <!-- Confirmations -->
-    <RimTalk_Knowledge_DeleteConfirm>Are you sure you want to delete this knowledge?</RimTalk_Knowledge_DeleteConfirm>
-    <RimTalk_Knowledge_Deleted>Deleted</RimTalk_Knowledge_Deleted>
     <RimTalk_Knowledge_ClearAllConfirm>Are you sure you want to clear all {0} knowledge entries? This action cannot be undone!</RimTalk_Knowledge_ClearAllConfirm>
     <RimTalk_Knowledge_Cleared>Knowledge library cleared</RimTalk_Knowledge_Cleared>
     
@@ -144,14 +141,14 @@
     <RimTalk_Knowledge_ExclusiveTo>Exclusive to {0}</RimTalk_Knowledge_ExclusiveTo>
     <RimTalk_Knowledge_VisibilityGlobal>Global (All Pawns)</RimTalk_Knowledge_VisibilityGlobal>
     <RimTalk_Knowledge_VisibilityExclusive>Exclusive to {0}</RimTalk_Knowledge_VisibilityExclusive>
-    <RimTalk_Knowledge_VisibilityDeleted>(Pawn Deleted)</RimTalk_Knowledge_VisibilityDeleted>
+    <RimTalk_Knowledge_VisibilityDeleted>Pawn #{0} (Deleted)</RimTalk_Knowledge_VisibilityDeleted>
     
     <RimTalk_Knowledge_DeleteConfirm>Delete {0} knowledge entries?</RimTalk_Knowledge_DeleteConfirm>
     <RimTalk_Knowledge_Deleted>Deleted {0} knowledge entries</RimTalk_Knowledge_Deleted>
     <RimTalk_Knowledge_ClearConfirm>Clear all knowledge? This cannot be undone!</RimTalk_Knowledge_ClearConfirm>
     <RimTalk_Knowledge_AllCleared>Knowledge library cleared</RimTalk_Knowledge_AllCleared>
     
-    <RimTalk_Knowledge_ImportDescription>Paste knowledge text (Format: [Tag]Content, one per line)</RimTalk_Knowledge_ImportDescription>
+    <RimTalk_Knowledge_ImportDescription>Paste knowledge entries in format: [Tag|Importance]Content</RimTalk_Knowledge_ImportDescription>
     <RimTalk_Knowledge_Imported>Imported {0} knowledge entries</RimTalk_Knowledge_Imported>
     <RimTalk_Knowledge_ExportedToClipboard>Exported {0} knowledge entries to clipboard</RimTalk_Knowledge_ExportedToClipboard>
     

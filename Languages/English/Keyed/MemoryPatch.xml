@@ -91,106 +91,18 @@
   <RimTalk_MindStream_MustEnterGame>Must enter game first</RimTalk_MindStream_MustEnterGame>
   <RimTalk_MindStream_CannotFindManager>Could not find memory manager</RimTalk_MindStream_CannotFindManager>
 
-  <!-- ==================== Knowledge Library UI ==================== -->
-  <RimTalk_Knowledge_Categories>Categories</RimTalk_Knowledge_Categories>
-  <RimTalk_Knowledge_CategoryAll>All</RimTalk_Knowledge_CategoryAll>
-  <RimTalk_Knowledge_CategoryInstructions>Instructions</RimTalk_Knowledge_CategoryInstructions>
-  <RimTalk_Knowledge_CategoryLore>Lore</RimTalk_Knowledge_CategoryLore>
-  <RimTalk_Knowledge_CategoryPawnStatus>Pawn Status</RimTalk_Knowledge_CategoryPawnStatus>
-  <RimTalk_Knowledge_CategoryHistory>History</RimTalk_Knowledge_CategoryHistory>
-  <RimTalk_Knowledge_CategoryOther>Other</RimTalk_Knowledge_CategoryOther>
-  <RimTalk_Knowledge_CategoryUnknown>Unknown</RimTalk_Knowledge_CategoryUnknown>
-  
-  <RimTalk_Knowledge_AutoGenerate>Auto Generate</RimTalk_Knowledge_AutoGenerate>
-  <RimTalk_Knowledge_PawnStatus>Pawn Status</RimTalk_Knowledge_PawnStatus>
-  <RimTalk_Knowledge_GenerateNow>Generate Now</RimTalk_Knowledge_GenerateNow>
-  <RimTalk_Knowledge_EventRecord>Event Record</RimTalk_Knowledge_EventRecord>
-  
-  <RimTalk_Knowledge_Total>Total: {0}</RimTalk_Knowledge_Total>
-  <RimTalk_Knowledge_Enabled>Enabled: {0}</RimTalk_Knowledge_Enabled>
-  <RimTalk_Knowledge_Selected>Selected: {0}</RimTalk_Knowledge_Selected>
-  
-  <!-- Toolbar -->
-  <RimTalk_Knowledge_New>New</RimTalk_Knowledge_New>
-  <RimTalk_Knowledge_Import>Import</RimTalk_Knowledge_Import>
-  <RimTalk_Knowledge_Export>Export</RimTalk_Knowledge_Export>
-  <RimTalk_Knowledge_ExportAll>Export All</RimTalk_Knowledge_ExportAll>
-  <RimTalk_Knowledge_ExportCount>Export ({0})</RimTalk_Knowledge_ExportCount>
-  <RimTalk_Knowledge_Delete>Delete</RimTalk_Knowledge_Delete>
-  <RimTalk_Knowledge_DeleteCount>Delete ({0})</RimTalk_Knowledge_DeleteCount>
-  <RimTalk_Knowledge_ClearAll>Clear All</RimTalk_Knowledge_ClearAll>
-  
-  <!-- List -->
-  <RimTalk_Knowledge_Showing>Showing {0} / {1}</RimTalk_Knowledge_Showing>
-  
-  <!-- Right Panel -->
+  <!-- Knowledge Library UI, the rest of the keys live in RimTalk_CommonKnowledge.xml -->
   <RimTalk_Knowledge_SelectOrCreate>Select or create a knowledge entry</RimTalk_Knowledge_SelectOrCreate>
-  <RimTalk_Knowledge_ItemsSelected>{0} items selected</RimTalk_Knowledge_ItemsSelected>
-  <RimTalk_Knowledge_EnabledCount>Enabled: {0}</RimTalk_Knowledge_EnabledCount>
-  <RimTalk_Knowledge_DisabledCount>Disabled: {0}</RimTalk_Knowledge_DisabledCount>
-  <RimTalk_Knowledge_AvgImportance>Avg. Importance: {0}</RimTalk_Knowledge_AvgImportance>
-  <RimTalk_Knowledge_EnableAll>Enable All</RimTalk_Knowledge_EnableAll>
-  <RimTalk_Knowledge_DisableAll>Disable All</RimTalk_Knowledge_DisableAll>
-  <RimTalk_Knowledge_ExportItems>Export ({0})</RimTalk_Knowledge_ExportItems>
-  <RimTalk_Knowledge_DeleteItems>Delete ({0})</RimTalk_Knowledge_DeleteItems>
   
-  <RimTalk_Knowledge_Details>Details</RimTalk_Knowledge_Details>
-  <RimTalk_Knowledge_Edit>Edit</RimTalk_Knowledge_Edit>
-  <RimTalk_Knowledge_Tag>Tag</RimTalk_Knowledge_Tag>
-  <RimTalk_Knowledge_Importance>Importance</RimTalk_Knowledge_Importance>
-  <RimTalk_Knowledge_Status>Status</RimTalk_Knowledge_Status>
-  <RimTalk_Knowledge_StatusEnabled>Enabled</RimTalk_Knowledge_StatusEnabled>
-  <RimTalk_Knowledge_StatusDisabled>Disabled</RimTalk_Knowledge_StatusDisabled>
   <RimTalk_Knowledge_Visibility>Visibility</RimTalk_Knowledge_Visibility>
-  <RimTalk_Knowledge_VisibilityGlobal>Global (All Pawns)</RimTalk_Knowledge_VisibilityGlobal>
-  <RimTalk_Knowledge_VisibilityExclusive>Exclusive to {0}</RimTalk_Knowledge_VisibilityExclusive>
-  <RimTalk_Knowledge_VisibilityDeleted>Pawn #{0} (Deleted)</RimTalk_Knowledge_VisibilityDeleted>
-  <RimTalk_Knowledge_Content>Content</RimTalk_Knowledge_Content>
-  
-  <!-- Edit Panel -->
-  <RimTalk_Knowledge_NewEntry>New Entry</RimTalk_Knowledge_NewEntry>
-  <RimTalk_Knowledge_EditEntry>Edit Entry</RimTalk_Knowledge_EditEntry>
-  <RimTalk_Knowledge_Save>Save</RimTalk_Knowledge_Save>
-  <RimTalk_Knowledge_Cancel>Cancel</RimTalk_Knowledge_Cancel>
-  <RimTalk_Knowledge_Global>Global</RimTalk_Knowledge_Global>
-  <RimTalk_Knowledge_GlobalAll>Global (All Pawns)</RimTalk_Knowledge_GlobalAll>
-  <RimTalk_Knowledge_ExclusiveTo>Exclusive to {0}</RimTalk_Knowledge_ExclusiveTo>
-  
-  <!-- Messages -->
-  <RimTalk_Knowledge_TagContentEmpty>Tag and content cannot be empty</RimTalk_Knowledge_TagContentEmpty>
-  <RimTalk_Knowledge_EntrySaved>Knowledge entry saved</RimTalk_Knowledge_EntrySaved>
-  <RimTalk_Knowledge_DeleteConfirm>Delete {0} knowledge entries?</RimTalk_Knowledge_DeleteConfirm>
-  <RimTalk_Knowledge_Deleted>Deleted {0} entries</RimTalk_Knowledge_Deleted>
-  <RimTalk_Knowledge_ExportedToClipboard>Exported {0} entries to clipboard</RimTalk_Knowledge_ExportedToClipboard>
-  <RimTalk_Knowledge_ImportTitle>Import Knowledge</RimTalk_Knowledge_ImportTitle>
-  <RimTalk_Knowledge_ImportDescription>Paste knowledge entries in format: [Tag|Importance]Content</RimTalk_Knowledge_ImportDescription>
-  <RimTalk_Knowledge_Imported>Imported {0} entries</RimTalk_Knowledge_Imported>
-  <RimTalk_Knowledge_ClearConfirm>Clear all knowledge entries?</RimTalk_Knowledge_ClearConfirm>
-  <RimTalk_Knowledge_AllCleared>All entries cleared</RimTalk_Knowledge_AllCleared>
-  <RimTalk_Knowledge_NoColonists>No colonists found</RimTalk_Knowledge_NoColonists>
-  <RimTalk_Knowledge_GeneratedPawnStatus>Generated status for {0} colonists</RimTalk_Knowledge_GeneratedPawnStatus>
-  <RimTalk_Knowledge_EventScanTriggered>Event scan triggered</RimTalk_Knowledge_EventScanTriggered>
-  <RimTalk_Knowledge_GenerationFailed>Generation failed: {0}</RimTalk_Knowledge_GenerationFailed>
   
   <!-- Legacy Translations (for compatibility) -->
-  <RimTalk_MemoryTitle>{0}'s Memories</RimTalk_MemoryTitle>
   <RimTalk_Filter_All>All</RimTalk_Filter_All>
   <RimTalk_Filter_Conversation>Conversation</RimTalk_Filter_Conversation>
   <RimTalk_Filter_Action>Action</RimTalk_Filter_Action>
   
   <RimTalk_UI_Preview>Preview</RimTalk_UI_Preview>
   <RimTalk_UI_Knowledge>Knowledge</RimTalk_UI_Knowledge>
-  <RimTalk_UI_ImmediateSummarize>Summarize Now</RimTalk_UI_ImmediateSummarize>
-  <RimTalk_UI_ImmediateSummarizeNoMemory>Summarize (No SCM)</RimTalk_UI_ImmediateSummarizeNoMemory>
-  <RimTalk_UI_MemorySummarized>Summarized memories for {0}</RimTalk_UI_MemorySummarized>
-  <RimTalk_UI_SummarizeAll>Summarize All</RimTalk_UI_SummarizeAll>
-  <RimTalk_UI_MemoriesSummarizedCount>Queued summarization for {0} colonists</RimTalk_UI_MemoriesSummarizedCount>
-  <RimTalk_UI_NoColonistsNeedSummarize>No colonists need summarization</RimTalk_UI_NoColonistsNeedSummarize>
-  <RimTalk_UI_ImmediateArchive>Archive Now</RimTalk_UI_ImmediateArchive>
-  <RimTalk_UI_ImmediateArchiveNoMemory>Archive (No ELS)</RimTalk_UI_ImmediateArchiveNoMemory>
-  <RimTalk_UI_MemoryArchived>Archived memories for {0}</RimTalk_UI_MemoryArchived>
-  <RimTalk_UI_ArchiveAll>Archive All</RimTalk_UI_ArchiveAll>
-  <RimTalk_UI_MemoriesArchivedCount>Archived memories for {0} colonists</RimTalk_UI_MemoriesArchivedCount>
   
   <RimTalk_Tooltip_Preview>View injection preview</RimTalk_Tooltip_Preview>
   <RimTalk_Tooltip_Knowledge>Manage knowledge library</RimTalk_Tooltip_Knowledge>
@@ -221,17 +133,11 @@
   <RimTalk_MemoryType_Conversation>Conversation</RimTalk_MemoryType_Conversation>
   <RimTalk_MemoryType_Action>Action</RimTalk_MemoryType_Action>
   
-  <RimTalk_Settings_MustEnterGame>Must enter game first</RimTalk_Settings_MustEnterGame>
-  <RimTalk_Settings_CannotFindManager>Cannot find memory manager</RimTalk_Settings_CannotFindManager>
-  
   <RimTalk_Menu_MemoryCompUnavailable>Memory component unavailable</RimTalk_Menu_MemoryCompUnavailable>
   <RimTalk_Menu_CreateMemoryFailed>Failed to create memory</RimTalk_Menu_CreateMemoryFailed>
   <RimTalk_Menu_OpenEditFailed>Failed to open edit dialog</RimTalk_Menu_OpenEditFailed>
   <RimTalk_Menu_AddActionMemory>Add Action Memory to {0}</RimTalk_Menu_AddActionMemory>
   <RimTalk_Menu_AddConversationMemory>Add Conversation Memory to {0}</RimTalk_Menu_AddConversationMemory>
-  
-  <RimTalk_Layer_ELS>ELS</RimTalk_Layer_ELS>
-  <RimTalk_Layer_CLPA>CLPA</RimTalk_Layer_CLPA>
   
   <!-- ==================== Matching Source Categories ==================== -->
   <RimTalk_MatchSource_CategoryDialogue>Dialogue</RimTalk_MatchSource_CategoryDialogue>
@@ -267,8 +173,6 @@
   
   <!-- Dynamic Injection Settings -->
   <RimTalk_Settings_DynamicInjectionSection>Dynamic Injection Settings</RimTalk_Settings_DynamicInjectionSection>
-  <RimTalk_Settings_EnableDynamicInjection>Enable Dynamic Injection</RimTalk_Settings_EnableDynamicInjection>
-  <RimTalk_Settings_DynamicInjectionDesc>Intelligently select the most relevant memories and knowledge to inject into AI conversations.</RimTalk_Settings_DynamicInjectionDesc>
   <RimTalk_Settings_MaxInjectedMemoriesLabel>Max Injected Memories: {0}</RimTalk_Settings_MaxInjectedMemoriesLabel>
   <RimTalk_Settings_MaxInjectedKnowledgeLabel>Max Injected Knowledge: {0}</RimTalk_Settings_MaxInjectedKnowledgeLabel>
   <RimTalk_Settings_MemoryScoreThresholdLabel>Memory Score Threshold: {0}</RimTalk_Settings_MemoryScoreThresholdLabel>
@@ -294,7 +198,6 @@
   
   <!-- AI Configuration -->
   <RimTalk_Settings_AIConfigSection>AI Configuration</RimTalk_Settings_AIConfigSection>
-  <RimTalk_Settings_PreferRimTalkAI>Prefer RimTalk Configuration</RimTalk_Settings_PreferRimTalkAI>
   <RimTalk_Settings_EnableAILog>Enable AI request logging</RimTalk_Settings_EnableAILog>
   <RimTalk_Settings_WillFollowRimTalkConfig>Will automatically follow RimTalk Mod's AI configuration</RimTalk_Settings_WillFollowRimTalkConfig>
   <RimTalk_Settings_FallbackEnabledDesc>Independent fallback chain is active. Calls will move to the next provider automatically on failure.</RimTalk_Settings_FallbackEnabledDesc>
@@ -315,9 +218,6 @@
   <RimTalk_Settings_DefaultModel>default</RimTalk_Settings_DefaultModel>
   <RimTalk_Settings_CustomModel>Custom...</RimTalk_Settings_CustomModel>
   <RimTalk_Settings_QuotaExceeded>AI quota exhausted, please check your provider account</RimTalk_Settings_QuotaExceeded>
-  <RimTalk_Settings_APIKey>API Key</RimTalk_Settings_APIKey>
-  <RimTalk_Settings_APIURL>API URL</RimTalk_Settings_APIURL>
-  <RimTalk_Settings_ModelName>Model</RimTalk_Settings_ModelName>
   <RimTalk_Settings_EnablePromptCaching>Enable Prompt Caching</RimTalk_Settings_EnablePromptCaching>
   <RimTalk_Settings_EnablePromptCachingUnavailable>Enable Prompt Caching (Unavailable)</RimTalk_Settings_EnablePromptCachingUnavailable>
   <RimTalk_Settings_OpenAICachingSupport>✓ OpenAI Supports Prompt Caching (Beta)</RimTalk_Settings_OpenAICachingSupport>
@@ -348,9 +248,7 @@
   <RimTalk_Settings_MaxABMInjectionRoundsLabel>ABM Injection Rounds: {0}</RimTalk_Settings_MaxABMInjectionRoundsLabel>
   <RimTalk_Settings_MaxABMInjectionRoundsDesc>Controls how many recent conversation rounds are injected into the AI context</RimTalk_Settings_MaxABMInjectionRoundsDesc>
   <RimTalk_Settings_MemoryTypesSection>Memory Type Toggles</RimTalk_Settings_MemoryTypesSection>
-  <RimTalk_Settings_ActionMemory>Action Memory</RimTalk_Settings_ActionMemory>
   <RimTalk_Settings_CombatMemory>Combat Memory</RimTalk_Settings_CombatMemory>
-  <RimTalk_Settings_ConversationMemory>Conversation Memory</RimTalk_Settings_ConversationMemory>
   
   <!-- Experimental Features -->
   <RimTalk_Settings_ExperimentalSection>🚀 Experimental Features</RimTalk_Settings_ExperimentalSection>
